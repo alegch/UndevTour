@@ -18,20 +18,28 @@
         _butons = [NSMutableArray array];
         _selectedIndex = NSNotFound;
         
-        CGFloat yOffset = 0.0f;
+        CGFloat xOffset = 0.0f;
         for (int i = 0; i < count; i++) {
             UIButton *lvlBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-            [lvlBtn setFrame:CGRectMake(0, yOffset, 44, 44)];
-            [lvlBtn setTitleColor:[UIColor colorWithRed:0.46 green:0.8 blue:0.9 alpha:1.0] forState:UIControlStateNormal];
+            [lvlBtn setFrame:CGRectMake(xOffset, 0, 44, 44)];
+            [lvlBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             [lvlBtn setTitle:[NSString stringWithFormat:@"%d", i] forState:UIControlStateNormal];
             [lvlBtn addTarget:self action:@selector(onLevelButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:lvlBtn];
             [_butons addObject:lvlBtn];
             
-            yOffset += 44;
+            UIImageView *imgViewLine = [[UIImageView alloc] initWithFrame:CGRectMake(xOffset + 44, 0, 1, 44)];
+            imgViewLine.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+            [self addSubview:imgViewLine];
+            
+            UIImageView *imgViewLine2 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)];
+            imgViewLine2.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+            [self addSubview:imgViewLine2];
+            
+            xOffset += 44;
         }
         
-        self.contentSize = CGSizeMake(RectWidth(self.frame), yOffset);
+        self.contentSize = CGSizeMake(xOffset, RectHeight(self.frame));
         [self setSelectedIndex:0];
     }
     return self;
@@ -42,12 +50,12 @@
     
     if (_selectedIndex != NSNotFound) {
         UIButton *selectedBtn = [_butons objectAtIndex:_selectedIndex];
-        [selectedBtn setTitleColor:[UIColor colorWithRed:0.46 green:0.8 blue:0.9 alpha:1.0] forState:UIControlStateNormal];
+        [selectedBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     }
     
     _selectedIndex = index;
     UIButton *newSelectedBtn = [_butons objectAtIndex:_selectedIndex];
-    [newSelectedBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [newSelectedBtn setTitleColor:RGB(134, 197, 67) forState:UIControlStateNormal];
 }
 
 #pragma mark - Event Handlers

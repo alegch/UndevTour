@@ -26,6 +26,7 @@
 
     NSInteger _selectedLevelIndex;
     UTLevelView *_selectedLevelView;
+    UTLevelsPanel *_panel;
     NSMutableArray *_levelsViews;
 }
 
@@ -77,9 +78,9 @@
     
     [self setSelectedLevelViewIndex:0];
     
-    UTLevelsPanel *panel = [[UTLevelsPanel alloc] initWithFrame:CGRectMake(0, 0, 44, 44 * _house.levels.count) count:_house.levels.count];
-    panel.panelDelegate = self;
-    [self.view addSubview:panel];
+    _panel = [[UTLevelsPanel alloc] initWithFrame:CGRectMake(0, 0, 320, 44) count:_house.levels.count];
+    _panel.panelDelegate = self;
+    [self.view addSubview:_panel];
 }
 
 - (void)viewDidLoad {
@@ -90,6 +91,7 @@
     for (UIView *v in _levelsViews) {
         v.frame = self.view.bounds;
     }
+    _panel.frame = RectSetOrigin(_panel.frame, 0, self.view.bounds.size.height - _panel.frame.size.height);
 }
 
 #pragma mark - buttons hendlers
