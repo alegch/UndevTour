@@ -20,6 +20,8 @@
 
 #pragma mark - Methods
 - (void)setLevel:(UTLevel *)level;
+- (void)setCenterToExhibit:(UTExhibit*)exhibit;
+- (void)showPath:(NSArray*)path;
 
 @end
 

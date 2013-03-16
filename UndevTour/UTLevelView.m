@@ -9,6 +9,8 @@
 #import "UTLevelView.h"
 #import "UTLevel.h"
 #import "UTExhibit.h"
+#import "IntPoint.h"
+#import "UIView+DrawRectBlock.h"
 
 @implementation UTLevelView
 {
@@ -57,6 +59,7 @@
     
     for (UTExhibit *exhibit in level.exhibits) {
         UIImageView *icon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:exhibit.iconPath]];
+        
         icon.frame = RectSetOrigin(icon.frame, [exhibit.coordinate CGPointValue].x, [exhibit.coordinate CGPointValue].y);
         icon.userInteractionEnabled = YES;
         [icon whenTapped:^{
@@ -67,9 +70,48 @@
                 
             }
         }];
-        
+        icon.center = CGPointMake([exhibit.coordinate CGPointValue].x, [exhibit.coordinate CGPointValue].y);
         [_iconsLayer addSubview:icon];
     }
+}
+
+- (void)setCenterToExhibit:(UTExhibit*)exhibit
+{
+    CGRect visibleRect = CGRectMake(([exhibit.coordinate CGPointValue].x - self.frame.size.width / 2.0f) * self.zoomScale,
+                                    ([exhibit.coordinate CGPointValue].y - self.frame.size.height / 2.0f)  * self.zoomScale,
+                                    self.frame.size.width,
+                                    self.frame.size.height);
+    [self scrollRectToVisible:visibleRect animated:YES];
+    
+}
+
+- (void)showPath:(NSArray*)path
+{
+    [[_pathLayer subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    for (NSArray *subpath in path) {
+        UIView *pathView = [UIView viewWithFrame:CGRectMake(0.0f, 0.0f, _container.frame.size.width, _container.frame.size.height)
+                                   drawRectBlock:^(CGRect rect) {
+                                       CGContextRef c = UIGraphicsGetCurrentContext();
+
+                                       for (NSDictionary *line in subpath) {
+                                           IntPoint *startPoint = line[@"start"];
+                                           IntPoint *endPoint = line[@"end"];
+                                        
+                                           CGContextSetLineWidth(c, 3.0f);
+                                           CGFloat black[4] = {134.0f / 255.0f, 197.0f / 255.0f, 67.0f / 255.0f, 1};
+                                           CGContextSetStrokeColor(c, black);
+                                           CGContextBeginPath(c);
+                                           CGContextMoveToPoint(c, startPoint.x / MAP_SCALE * IMAGE_SCALE, startPoint.y / MAP_SCALE * IMAGE_SCALE);
+                                           CGContextAddLineToPoint(c, endPoint.x / MAP_SCALE * IMAGE_SCALE, endPoint.y / MAP_SCALE * IMAGE_SCALE);
+                                           CGContextStrokePath(c);
+                                       }
+            }];
+        [pathView setOpaque:NO];
+
+        [_pathLayer addSubview:pathView];
+    }
+    
 }
 
 #pragma marl - scroll view delegate
