@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class UTExhibit;
+
 @interface UTHouse : NSObject
 
 #pragma mark - Properties
@@ -15,5 +17,7 @@
 
 #pragma mark - Methods
 - (NSArray *)sortedByZOrderLevelByAscending:(BOOL)ascending;
+- (UTExhibit *)exibitByHashCode:(NSString *)code;
+- (NSInteger)levelIndexByExhibit:(UTExhibit *)exhibit;
 
 @end

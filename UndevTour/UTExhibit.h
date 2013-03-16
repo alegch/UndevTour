@@ -16,5 +16,6 @@
 @property (nonatomic, strong) NSString *definition;
 @property (nonatomic, strong) NSString *photoPath;
 @property (nonatomic, strong) NSValue *coordinate;
+@property (nonatomic, strong) NSString *hash;
 
 @end

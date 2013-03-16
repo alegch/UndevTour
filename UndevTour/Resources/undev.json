@@ -29,26 +29,29 @@
               "name": "Оля реактив",
               "description": "Описание эскпоната",
               "photo_path": "exibit.jpg",
+              "hash":"0",
               "position": {
               "x": 0,
-              "y": 0
+              "y": 0,
               }
               },
               {
               "icon_path": "icon.png",
-              "name": "Маша 0.5",
+              "name": "Маша",
               "description": "Описание эскпоната",
               "photo_path": "exibit.jpg",
+              "hash":"1",
               "position": {
               "x": 300,
-              "y": 0
+              "y": 0,
               }
               },
               {
               "icon_path": "icon.png",
-              "name": "Даша 3",
+              "name": "Даша",
               "description": "Описание эскпоната",
               "photo_path": "exibit.jpg",
+              "hash":"2",
               "position": {
               "x": 0,
               "y": 400
@@ -58,7 +61,7 @@
   },
   {
   "image_path" : "plan1.png",
-  "z": 0,
+  "z": 1,
   "map":[[0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0],
          [0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0],
          [0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0],
@@ -83,39 +86,42 @@
   "objects": [
               {
               "icon_path": "icon.png",
-              "name": "Оля реактив",
+              "name": "Настя клуб",
               "description": "Описание эскпоната",
               "photo_path": "exibit.jpg",
+              "hash":"3",
               "position": {
               "x": 5,
-              "y": 11
+              "y": 11,
               }
               },
               {
               "icon_path": "icon.png",
-              "name": "Маша 0.5",
+              "name": "Оксана фитнес",
               "description": "Описание эскпоната",
               "photo_path": "exibit.jpg",
+              "hash":"4",
               "position": {
               "x": 8,
-              "y": 15
+              "y": 15,
               }
               },
               {
               "icon_path": "icon.png",
-              "name": "Даша 3",
+              "name": "Натаха",
               "description": "Описание эскпоната",
               "photo_path": "exibit.jpg",
+              "hash":"5",
               "position": {
               "x": 9,
-              "y": 18
+              "y": 18,
               }
               }
               ]
   },
   {
   "image_path": "plan2.png",
-  "z": 0,
+  "z": 2,
   "map":[[0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0],
          [0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0],
          [0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0],
@@ -140,32 +146,35 @@
   "objects": [
               {
               "icon_path": "icon.png",
-              "name": "Оля реактив",
+              "name": "Ирина",
               "description": "Описание эскпоната",
               "photo_path": "exibit.jpg",
+              "hash":"6",
               "position": {
               "x": 10,
-              "y": 200
+              "y": 200,
               }
               },
               {
               "icon_path": "icon.png",
-              "name": "Маша 0.5",
+              "name": "Диана соседка",
               "description": "Описание эскпоната",
               "photo_path": "exibit.jpg",
+              "hash":"7",
               "position": {
               "x": 100,
-              "y": 200
+              "y": 200,
               }
               },
               {
               "icon_path": "icon.png",
-              "name": "Даша 3",
+              "name": "Кристина черная",
               "description": "Описание эскпоната",
               "photo_path": "exibit.jpg",
+              "hash":"8",
               "position": {
               "x": 200,
-              "y": 200
+              "y": 200,
               }
               }
               ]

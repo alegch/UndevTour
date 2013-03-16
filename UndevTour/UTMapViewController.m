@@ -146,6 +146,13 @@
     _selectedLevelIndex = index;
 }
 
+- (void)setCurrentPositionToExhibit:(UTExhibit *)exhibit {
+    NSInteger exhibitLevelIndex = [_house levelIndexByExhibit:exhibit];
+    NSLog(@"set exibit index: %d", exhibitLevelIndex);
+    [self setSelectedLevelViewIndex:exhibitLevelIndex];
+    [_panel setSelectedIndex:exhibitLevelIndex];
+}
+
 #pragma mark - UILevelsPanel Delegate
 - (void)onSelectLevelWithIndex:(NSInteger)index {
     [self setSelectedLevelViewIndex:index];
@@ -189,7 +196,10 @@
         break;
     
     NSString *hash = symbol.data;
-    NSLog(@"%@", hash);
+    NSLog(@"Hash:%@", hash);
+    UTExhibit *ex = [_house exibitByHashCode:hash];
+    [self setCurrentPositionToExhibit:ex];
+
     [reader dismissModalViewControllerAnimated: YES];
 }
 
