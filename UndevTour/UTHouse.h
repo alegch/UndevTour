@@ -13,4 +13,7 @@
 #pragma mark - Properties
 @property (nonatomic, strong) NSArray *levels;
 
+#pragma mark - Methods
+- (NSArray *)sortedByZOrderLevelByAscending:(BOOL)ascending;
+
 @end

@@ -10,4 +10,10 @@
 
 @implementation UTHouse
 
+- (NSArray *)sortedByZOrderLevelByAscending:(BOOL)ascending {
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"z" ascending:ascending];
+    NSArray *sortedLevels = [self.levels sortedArrayUsingDescriptors:@[descriptor]];
+    return sortedLevels;
+}
+
 @end

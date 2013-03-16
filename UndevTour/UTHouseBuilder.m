@@ -28,7 +28,7 @@
     UTLevelBulder *levelBuilder = [[UTLevelBulder alloc] init];
     
     for (NSDictionary *levelDict in levelsDicts) {
-        UTLevel *lvl = [levelBuilder buil3dLevelFromDictionary:levelDict];
+        UTLevel *lvl = [levelBuilder buildLevelFromDictionary:levelDict];
         [levels addObject:lvl];
     }
     house.levels = levels;
