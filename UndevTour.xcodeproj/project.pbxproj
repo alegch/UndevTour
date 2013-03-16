@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		2AAE59BE16F473A2007C7B11 /* UTBlockService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE59BD16F473A2007C7B11 /* UTBlockService.m */; };
 		2AAE59C116F47517007C7B11 /* UTPathFinderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE59C016F47517007C7B11 /* UTPathFinderModel.m */; };
+		2AAE59C516F489AD007C7B11 /* NSArray+reverseArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE59C416F489AD007C7B11 /* NSArray+reverseArray.m */; };
 		5C12F04A16F4A52100BD44EE /* plan2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C12F04816F4A52100BD44EE /* plan2.png */; };
 		5C12F04B16F4A52100BD44EE /* plan1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C12F04916F4A52100BD44EE /* plan1.png */; };
 		5C12F04F16F4A5AA00BD44EE /* UTLevelsPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C12F04E16F4A5AA00BD44EE /* UTLevelsPanel.m */; };
-		2AAE59C516F489AD007C7B11 /* NSArray+reverseArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE59C416F489AD007C7B11 /* NSArray+reverseArray.m */; };
 		5C8764A016F4696000072EF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C87649F16F4696000072EF5 /* UIKit.framework */; };
 		5C8764A216F4696000072EF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8764A116F4696000072EF5 /* Foundation.framework */; };
 		5C8764A416F4696000072EF5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8764A316F4696000072EF5 /* CoreGraphics.framework */; };
@@ -421,6 +421,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UndevTour/UndevTour-Prefix.pch";
 				INFOPLIST_FILE = "UndevTour/UndevTour-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -433,6 +434,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UndevTour/UndevTour-Prefix.pch";
 				INFOPLIST_FILE = "UndevTour/UndevTour-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

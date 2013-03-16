@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KNMultiItemSelector.h"
 
-@interface UTMapViewController : UIViewController
+@interface UTMapViewController : UIViewController <KNMultiItemSelectorDelegate>
 
 @end

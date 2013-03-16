@@ -36,19 +36,8 @@
     if (self) {
         UTHouseBuilder *builder = [[UTHouseBuilder alloc] init];
         _house = [builder buildHouseWithName:@"undev"];
-        _levelsViews = [NSMutableArray array];\
+        _levelsViews = [NSMutableArray array];
         _selectedLevelIndex = NSNotFound;
-
-        UTLevel *level = _house.levels[0];
-
-        UTBlockService *blockService = [[UTBlockService alloc] initWithBlocks:level.map];
-        UTPathFinderModel *model = [[UTPathFinderModel alloc] initWithBlockService:blockService];
-        
-        NSMutableArray *exhibits = [NSMutableArray arrayWithArray:level.exhibits];
-        UTExhibit *strtExhibit = [exhibits lastObject];
-        [exhibits removeObject:strtExhibit];
-        
-        [model findPathForObjects:exhibits startOn:strtExhibit];
     }
     return self;
 }
@@ -80,6 +69,19 @@
     for (UIView *v in _levelsViews) {
         v.frame = self.view.bounds;
     }
+    
+    NSMutableArray * items = [NSMutableArray array];
+    for (UTExhibit *exhibit in [_house.levels[_selectedLevelIndex] exhibits]) {
+        [items addObject:[[KNSelectorItem alloc] initWithDisplayValue:exhibit.name
+                                                          selectValue:exhibit.name
+                                                                image:[UIImage imageNamed:exhibit.photoPath]]];
+    }
+    
+    KNMultiItemSelector * selector = [[KNMultiItemSelector alloc] initWithItems:items delegate:self];
+    UINavigationController * uinav = [[UINavigationController alloc] initWithRootViewController:selector];
+    uinav.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal; // iPhone
+
+    [self presentModalViewController:uinav animated:YES];
 }
 
 #pragma mark - Methods
@@ -99,6 +101,29 @@
 #pragma mark - UILevelsPanel Delegate
 - (void)onSelectLevelWithIndex:(NSInteger)index {
     [self setSelectedLevelViewIndex:index];
+}
+
+#pragma mark - 
+
+-(void)selectorDidCancelSelection
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+-(void)selectorDidFinishSelectionWithItems:(NSArray*)selectedItems
+{
+    [self dismissModalViewControllerAnimated:YES];
+    
+    UTLevel *level = _house.levels[0];
+
+    UTBlockService *blockService = [[UTBlockService alloc] initWithBlocks:level.map];
+    UTPathFinderModel *model = [[UTPathFinderModel alloc] initWithBlockService:blockService];
+
+    NSMutableArray *exhibits = [NSMutableArray arrayWithArray:level.exhibits];
+    UTExhibit *strtExhibit = [exhibits lastObject];
+    [exhibits removeObject:strtExhibit];
+
+    [model findPathForObjects:exhibits startOn:strtExhibit];
 }
 
 @end
