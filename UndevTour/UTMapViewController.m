@@ -31,10 +31,8 @@
     UTLevelView *_selectedLevelView;
     UTLevelsPanel *_panel;
     NSMutableArray *_levelsViews;
-    
-    UTExhibit *_lastExhibit;
-    
     BOOL _needShowTourVc;
+    UTExhibit *_currentExhibit;
 }
 
 @end
@@ -146,7 +144,7 @@
 
 - (void)makeToureButtonHendler
 {
-    if (_lastExhibit) {
+    if (_currentExhibit) {
         [self showTourChecker];
     } else {
         [UIAlertView showAlertViewWithTitle:@"Внимание" message:@"Для начала найдите ближайший QR код и наведите на него камеру." cancelButtonTitle:@"Отмена" otherButtonTitles:@[@"Камера"] handler:^(UIAlertView *alertView, NSInteger index) {
@@ -175,6 +173,7 @@
 }
 
 - (void)setCurrentPositionToExhibit:(UTExhibit *)exhibit {
+    _currentExhibit = exhibit;
     NSInteger exhibitLevelIndex = [_house levelIndexByExhibit:exhibit];
     NSLog(@"set exibit index: %d", exhibitLevelIndex);
     
@@ -209,11 +208,17 @@
     UTBlockService *blockService = [[UTBlockService alloc] initWithBlocks:level.map];
     UTPathFinderModel *model = [[UTPathFinderModel alloc] initWithBlockService:blockService];
 
-    NSMutableArray *exhibits = [NSMutableArray arrayWithArray:level.exhibits];
-    UTExhibit *strtExhibit = [exhibits lastObject];
-    [exhibits removeObject:strtExhibit];
-
-    NSArray *path = [model findPathForObjects:exhibits startOn:strtExhibit];
+    NSMutableArray *exhibits = [NSMutableArray array];
+    
+    for (UTExhibit *exhibit in level.exhibits) {
+        if ([selectedItems indexOfObject:exhibit.name] != NSNotFound) {
+            [exhibits addObject:exhibit];
+        }
+    }
+    
+    [exhibits removeObject:_currentExhibit];
+    
+    NSArray *path = [model findPathForObjects:exhibits startOn:_currentExhibit];
     
     NSMutableArray *pathWhisLines = [NSMutableArray arrayWithCapacity:path.count];
     for (NSArray *subPath in path) {
@@ -259,7 +264,7 @@
     NSLog(@"Hash:%@", hash);
     UTExhibit *ex = [_house exibitByHashCode:hash];
     if (ex) {
-        _lastExhibit = ex;
+        _currentExhibit = ex;
         [self setCurrentPositionToExhibit:ex];
         
         if (_needShowTourVc) {
