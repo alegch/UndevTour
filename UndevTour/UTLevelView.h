@@ -21,6 +21,8 @@
 #pragma mark - Methods
 - (void)setLevel:(UTLevel *)level;
 - (void)setCenterToExhibit:(UTExhibit*)exhibit;
+- (void)setSelectedExhibit:(UTExhibit*)exhibit;
+- (void)unselectExibit;
 - (void)showPath:(NSArray*)path;
 
 @end

@@ -28,7 +28,7 @@
         exhibit.definition = [exhibitDict objectForKey:@"description"];
         exhibit.photoPath = [exhibitDict objectForKey:@"photo_path"];
         exhibit.hash = [exhibitDict objectForKey:@"hash"];
-        
+        exhibit.selectedIconPath = [exhibitDict objectForKey:@"selected_icon_path"];
         NSDictionary *positionDict = [exhibitDict objectForKey:@"position"];
         NSInteger x = [[positionDict objectForKey:@"x"] integerValue];
         NSInteger y = [[positionDict objectForKey:@"y"] integerValue];

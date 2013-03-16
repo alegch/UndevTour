@@ -17,6 +17,8 @@
     UIView *_container;
     UIView *_iconsLayer;
     UIView *_pathLayer;
+    
+    UIImageView *_selectedImageView;
 }
 
 - (id)initWithFrame:(CGRect)frame {
@@ -59,6 +61,7 @@
     
     for (UTExhibit *exhibit in level.exhibits) {
         UIImageView *icon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:exhibit.iconPath]];
+        icon.highlightedImage = [UIImage imageNamed:exhibit.selectedIconPath];
         
         icon.frame = RectSetOrigin(icon.frame, [exhibit.coordinate CGPointValue].x, [exhibit.coordinate CGPointValue].y);
         icon.userInteractionEnabled = YES;
@@ -67,9 +70,9 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self.exhibitDelegate onExhibitTapped:exhibit inLevelView:self];
                 });
-                
             }
         }];
+        icon.tag = [exhibit.hash integerValue] + 100;
         icon.center = CGPointMake([exhibit.coordinate CGPointValue].x, [exhibit.coordinate CGPointValue].y);
         [_iconsLayer addSubview:icon];
     }
@@ -83,6 +86,23 @@
                                     self.frame.size.height);
     [self scrollRectToVisible:visibleRect animated:YES];
     
+    
+}
+
+- (void)setSelectedExhibit:(UTExhibit*)exhibit {
+    if (_selectedImageView) {
+        _selectedImageView.highlighted = NO;
+    }
+    
+    UIImageView *iconView = (UIImageView *)[_iconsLayer viewWithTag:[exhibit.hash integerValue] + 100];
+    iconView.highlighted = YES;
+    _selectedImageView = iconView;
+}
+
+- (void)unselectExibit {
+    if (_selectedImageView) {
+        _selectedImageView.highlighted = NO;
+    }
 }
 
 - (void)showPath:(NSArray*)path

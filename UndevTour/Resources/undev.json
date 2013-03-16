@@ -26,7 +26,8 @@
   "objects": [
               {
               "icon_path": "checkinIcon-selected.png",
-              "name": "Оля реактив",
+              "selected_icon_path": "checkinRed.png",
+              "name": "Настя",
               "description": "Класс Представительский. Год выпуска - май 1979. Пробег 22. Цвет-Хамелеон (родная) Рост 170 см. Вес Н/у. Фары - зеленые. Высота клиренса - 110 см. Airbag. Габариты: 90-65-95. Эксплуатация бережная, летняя. Мускульный передний привод с блокировкой дифференциала. Гаражного хранения в теплом гараже. Документы - на руках. Кузов - не битый, не ржавый, не гнилой (антикор). Тип топлива - низко октановое: Балтика, Бочкарев, Золотая бочка, Невское. Многоточечная система впрыска. Трансмиссия - КПП Ручная 5-ступенчатая. Крыша - на месте (без присмотра подвержена деформации). Тормоза с ABS (ручник отсутствует). Масло Movеnpick Maple Walnuts. Суперсовременная (титановая) защита картера от \"Дикой Орхидеи\" (с технологическим отверстием для слива масла). Идеальное состояние. Все новое. Все опции. Заводится с пол-оборота.",
               "photo_path": "exibit.jpg",
               "hash":"0",
@@ -37,7 +38,8 @@
               },
               {
               "icon_path": "checkinIcon-selected.png",
-              "name": "Маша 0.5",
+              "selected_icon_path": "checkinRed.png",
+              "name": "Оля",
               "description": "Описание эскпоната",
               "photo_path": "exibit.jpg",
               "hash":"1",
@@ -48,7 +50,8 @@
               },
               {
               "icon_path": "checkinIcon-selected.png",
-              "name": "Даша 3",
+              "selected_icon_path": "checkinRed.png",
+              "name": "Даша",
               "description": "Описание эскпоната",
               "photo_path": "exibit.jpg",
               "hash":"2",
@@ -86,7 +89,8 @@
   "objects": [
               {
               "icon_path": "checkinIcon-selected.png",
-              "name": "Оля реактив",
+              "selected_icon_path": "checkinRed.png",
+              "name": "Натаха",
               "description": "Описание эскпоната",
               "photo_path": "exibit.jpg",
               "hash":"3",
@@ -97,24 +101,26 @@
               },
               {
               "icon_path": "checkinIcon-selected.png",
-              "name": "Маша 0.5",
+              "selected_icon_path": "checkinRed.png",
+              "name": "Кристина",
               "description": "Описание эскпоната",
               "photo_path": "exibit.jpg",
               "hash":"4",
               "position": {
-              "x": 8,
-              "y": 15,
+              "x": 100,
+              "y": 100,
               }
               },
               {
               "icon_path": "checkinIcon-selected.png",
-              "name": "Даша 3",
+              "selected_icon_path": "checkinRed.png",
+              "name": "Вадим",
               "description": "Описание эскпоната",
               "photo_path": "exibit.jpg",
               "hash":"5",
               "position": {
-              "x": 9,
-              "y": 18,
+              "x": 200,
+              "y": 200,
               }
               }
               ]
@@ -146,7 +152,8 @@
   "objects": [
               {
               "icon_path": "checkinIcon-selected.png",
-              "name": "Оля реактив",
+              "selected_icon_path": "checkinRed.png",
+              "name": "Спич",
               "description": "Описание эскпоната",
               "photo_path": "exibit.jpg",
               "hash":"6",
@@ -157,7 +164,8 @@
               },
               {
               "icon_path": "checkinIcon-selected.png",
-              "name": "Маша 0.5",
+              "selected_icon_path": "checkinRed.png",
+              "name": "Илья",
               "description": "Описание эскпоната",
               "photo_path": "exibit.jpg",
               "hash":"7",
@@ -168,7 +176,8 @@
               },
               {
               "icon_path": "checkinIcon-selected.png",
-              "name": "Даша 3",
+              "selected_icon_path": "checkinRed.png",
+              "name": "Толя",
               "description": "Описание эскпоната",
               "photo_path": "exibit.jpg",
               "hash":"8",

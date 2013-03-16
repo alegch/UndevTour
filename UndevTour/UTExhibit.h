@@ -12,6 +12,7 @@
 
 #pragma mark - Properties
 @property (nonatomic, strong) NSString *iconPath;
+@property (nonatomic, strong) NSString *selectedIconPath;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *definition;
 @property (nonatomic, strong) NSString *photoPath;

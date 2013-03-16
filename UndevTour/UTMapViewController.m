@@ -153,8 +153,14 @@
 - (void)setCurrentPositionToExhibit:(UTExhibit *)exhibit {
     NSInteger exhibitLevelIndex = [_house levelIndexByExhibit:exhibit];
     NSLog(@"set exibit index: %d", exhibitLevelIndex);
+    
+    for (UTLevelView *levelView in _levelsViews) {
+        [levelView unselectExibit];
+    }
+    
     [self setSelectedLevelViewIndex:exhibitLevelIndex];
     [_selectedLevelView setCenterToExhibit:exhibit];
+    [_selectedLevelView setSelectedExhibit:exhibit];
     [_panel setSelectedIndex:exhibitLevelIndex];
 }
 
