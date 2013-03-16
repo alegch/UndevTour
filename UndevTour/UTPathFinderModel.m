@@ -25,41 +25,23 @@
     return self;
 }
 
-- (NSArray*)findPathForObjects:(NSArray*)objects startOn:(UTExhibit*)startObject
+- (FindingTracer *)findPathFromStartObject:(UTExhibit *)startObject toFinishObject:(UTExhibit *)finishObject
 {
-    NSMutableArray *objectsForPathFinding = [NSMutableArray arrayWithArray:objects];
-    [objectsForPathFinding insertObject:startObject atIndex:0];
+    CGPoint start = [[startObject coordinate] CGPointValue];
+    CGPoint finish = [[finishObject coordinate] CGPointValue];
     
-    NSMutableArray *path = [NSMutableArray arrayWithCapacity:objectsForPathFinding.count];
-    for (NSUInteger i = 0; i < objectsForPathFinding.count; i++) {
-        NSMutableArray *array = [NSMutableArray arrayWithCapacity:objectsForPathFinding.count];
-        [path addObject:array];
-        for (NSUInteger j = 0; j < objectsForPathFinding.count; j++) {
-            path[i][j] = [NSNull null];
-        }
-    }
+    AStarFinder* finder = [[AStarFinder alloc] initWithCapacity:1000];
+    FindingTracer *tracer = [[FindingTracer alloc] init];
     
-    for (NSUInteger i = 0; i < objectsForPathFinding.count; i++) {
-        for (NSUInteger j = i + 1; j < objectsForPathFinding.count; j++) {
-            UTExhibit *startObject = objectsForPathFinding[i];
-            UTExhibit *finishObject = objectsForPathFinding[j];
-            
-            CGPoint start = [[startObject coordinate] CGPointValue];
-            CGPoint finish = [[finishObject coordinate] CGPointValue];
-            
-            AStarFinder* finder = [[AStarFinder alloc] initWithCapacity:1000];
-            FindingTracer *tracer = [[FindingTracer alloc] init];
-            
-            [finder find:self.blockService
-                    from:[IntPoint pointWithX:start.x withY:start.y]
-                      to:[IntPoint pointWithX:finish.x withY:finish.y]
-              withTracer:tracer];
-            
-            path[i][j] = tracer.path;
-            path[j][i] = [tracer.path reverseArray];
-        }
-    }
-    
+    [finder find:self.blockService
+            from:[IntPoint pointWithX:start.x withY:start.y]
+              to:[IntPoint pointWithX:finish.x withY:finish.y]
+      withTracer:tracer];
+    return tracer;
+}
+
+- (NSMutableArray *)makePath:(NSMutableArray *)path
+{
     NSMutableArray *resultPath = [NSMutableArray array];
     NSInteger currentPos = 0;
     while (true) {
@@ -79,8 +61,37 @@
             path[currentPos][minDistanceTo] = path[minDistanceTo][currentPos] = [NSNull null];
         }
     }
-    
     return resultPath;
+}
+
+- (NSMutableArray *)createSquareArrayWithNullObjects:(NSUInteger)objectCountForCreating
+{
+    NSMutableArray *path = [NSMutableArray arrayWithCapacity:objectCountForCreating];
+    for (NSUInteger i = 0; i < objectCountForCreating; i++) {
+        NSMutableArray *array = [NSMutableArray arrayWithCapacity:objectCountForCreating];
+        [path addObject:array];
+        for (NSUInteger j = 0; j < objectCountForCreating; j++) {
+            path[i][j] = [NSNull null];
+        }
+    }
+    return path;
+}
+
+- (NSArray*)findPathForObjects:(NSArray*)objects startOn:(UTExhibit*)startObject
+{
+    NSMutableArray *objectsForPathFinding = [NSMutableArray arrayWithArray:objects];
+    [objectsForPathFinding insertObject:startObject atIndex:0];
+
+    NSMutableArray *path = [self createSquareArrayWithNullObjects:objectsForPathFinding.count];
+    for (NSUInteger i = 0; i < objectsForPathFinding.count; i++) {
+        for (NSUInteger j = i + 1; j < objectsForPathFinding.count; j++) {
+            FindingTracer *tracer = [self findPathFromStartObject:objectsForPathFinding[i] toFinishObject:objectsForPathFinding[j]];
+            path[i][j] = tracer.path;
+            path[j][i] = [tracer.path reverseArray];
+        }
+    }
+    
+    return [self makePath:path];
 }
 
 @end
