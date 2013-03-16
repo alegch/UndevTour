@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UTExhibit.h"
+#import "UTBlockService.h"
 
 @interface UTPathFinderModel : NSObject
-
-
+- (id)initWithBlockService:(UTBlockService*)blockService;
+- (NSArray*)findPathForObjects:(NSArray*)objects startOn:(UTExhibit*)startObject;
 @end

@@ -14,7 +14,7 @@
 @property int height;
 @property (nonatomic, strong) NSArray *blocks;
 
-- (id)initWithWidth:(int)width height:(int)height blocks:(NSArray*)blocks;
+- (id)initWithBlocks:(NSArray*)blocks;
 - (BOOL)isBlock:(int)x :(int)y;
 
 @end
