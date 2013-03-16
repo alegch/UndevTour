@@ -16,3 +16,13 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+
+docset-installed.txt
+Podfile.lock
+
+Pods/.DS_Store
+UndevTour/.DS_Store
+*.swp
+*.lock
+UndevTour.xcworkspace/xcuserdata/*
+
