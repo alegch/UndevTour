@@ -31,6 +31,8 @@
     [[self subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
     _container = [[UIView alloc] init];
+    _container.clipsToBounds = YES;
+    _container.frame = CGRectMake(0, 0, ViewWidth(self), ViewHeight(self));
     [self addSubview:_container];
 
     UIImage *mapImage = [UIImage imageNamed:level.imagePath];
@@ -46,11 +48,26 @@
     [_container addSubview:_pathLayer];
     
     _iconsLayer = [[UIView alloc] init];
+    _iconsLayer.clipsToBounds = YES;
+    
+    _iconsLayer.frame = RectSetSize(_iconsLayer.frame, mapImage.size.width, mapImage.size.height);
+    _iconsLayer.backgroundColor = [UIColor clearColor];
+    
     [_container addSubview:_iconsLayer];
     
     for (UTExhibit *exhibit in level.exhibits) {
         UIImageView *icon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:exhibit.iconPath]];
         icon.frame = RectSetOrigin(icon.frame, [exhibit.coordinate CGPointValue].x, [exhibit.coordinate CGPointValue].y);
+        icon.userInteractionEnabled = YES;
+        [icon whenTapped:^{
+            if (self.delegate) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.exhibitDelegate onExhibitTapped:exhibit inLevelView:self];
+                });
+                
+            }
+        }];
+        
         [_iconsLayer addSubview:icon];
     }
 }

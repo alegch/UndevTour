@@ -7,6 +7,7 @@
 //
 
 #import "UTMapViewController.h"
+#import "UTExhibitDetailViewController.h"
 #import "UTLevelView.h"
 
 #import "UTHouseBuilder.h"
@@ -20,6 +21,7 @@
 #import <ZBarSDK/ZBarSDK.h>
 
 @interface UTMapViewController () <UTLevelsPanelDelegate,
+                                   UTLevelViewDelegate,
                                    ZBarReaderDelegate>
 {
     UTHouse *_house;
@@ -72,6 +74,7 @@
     
     for (UTLevel *level in [_house sortedByZOrderLevelByAscending:YES]) {
         UTLevelView *levelView = [[UTLevelView alloc] initWithFrame:CGRectZero];
+        levelView.exhibitDelegate = self;
         [levelView setLevel:level];
         [_levelsViews addObject:levelView];
     }
@@ -201,6 +204,13 @@
     [self setCurrentPositionToExhibit:ex];
 
     [reader dismissModalViewControllerAnimated: YES];
+}
+
+#pragma mark - UTLevelViewDelegate
+- (void)onExhibitTapped:(UTExhibit *)exhibit inLevelView:(UTLevelView *)levelView {
+    UTExhibitDetailViewController *vc = [[UTExhibitDetailViewController alloc] init];
+    [vc setExhibit:exhibit];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

@@ -21,6 +21,7 @@
 		2AAE59E816F4CF57007C7B11 /* MakeToure.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AAE59E416F4CF56007C7B11 /* MakeToure.png */; };
 		2AAE59E916F4CF57007C7B11 /* MakeToure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AAE59E516F4CF57007C7B11 /* MakeToure@2x.png */; };
 		5C04012616F4D3D00030923F /* camera_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C04012516F4D3D00030923F /* camera_overlay.png */; };
+		5C04013C16F4F6950030923F /* UTExhibitDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C04013B16F4F6950030923F /* UTExhibitDetailViewController.m */; };
 		5C12F04A16F4A52100BD44EE /* plan2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C12F04816F4A52100BD44EE /* plan2.png */; };
 		5C12F04B16F4A52100BD44EE /* plan1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C12F04916F4A52100BD44EE /* plan1.png */; };
 		5C12F04F16F4A5AA00BD44EE /* UTLevelsPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C12F04E16F4A5AA00BD44EE /* UTLevelsPanel.m */; };
@@ -66,6 +67,8 @@
 		2AAE59E516F4CF57007C7B11 /* MakeToure@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MakeToure@2x.png"; sourceTree = "<group>"; };
 		315042F499E646C5BDC7CBD8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		5C04012516F4D3D00030923F /* camera_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_overlay.png; sourceTree = "<group>"; };
+		5C04013A16F4F6950030923F /* UTExhibitDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UTExhibitDetailViewController.h; sourceTree = "<group>"; };
+		5C04013B16F4F6950030923F /* UTExhibitDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UTExhibitDetailViewController.m; sourceTree = "<group>"; };
 		5C12F04816F4A52100BD44EE /* plan2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plan2.png; sourceTree = "<group>"; };
 		5C12F04916F4A52100BD44EE /* plan1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plan1.png; sourceTree = "<group>"; };
 		5C12F04D16F4A5AA00BD44EE /* UTLevelsPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UTLevelsPanel.h; sourceTree = "<group>"; };
@@ -214,6 +217,8 @@
 			children = (
 				5C8764D016F46C5F00072EF5 /* UTMapViewController.h */,
 				5C8764D116F46C5F00072EF5 /* UTMapViewController.m */,
+				5C04013A16F4F6950030923F /* UTExhibitDetailViewController.h */,
+				5C04013B16F4F6950030923F /* UTExhibitDetailViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 				5C87651316F48F3900072EF5 /* UTLevelView.m in Sources */,
 				5C12F04F16F4A5AA00BD44EE /* UTLevelsPanel.m in Sources */,
 				2AAE59C516F489AD007C7B11 /* NSArray+reverseArray.m in Sources */,
+				5C04013C16F4F6950030923F /* UTExhibitDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

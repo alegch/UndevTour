@@ -9,10 +9,21 @@
 #import <UIKit/UIKit.h>
 
 @class UTLevel;
+@class UTExhibit;
+
+@protocol UTLevelViewDelegate;
 
 @interface UTLevelView : UIScrollView <UIScrollViewDelegate>
 
+#pragma mark - Properties
+@property (nonatomic, strong) id<UTLevelViewDelegate> exhibitDelegate;
+
+#pragma mark - Methods
 - (void)setLevel:(UTLevel *)level;
 
+@end
+
+@protocol UTLevelViewDelegate
+- (void)onExhibitTapped:(UTExhibit *)exhibit inLevelView:(UTLevelView *)levelView;
 @end
 
