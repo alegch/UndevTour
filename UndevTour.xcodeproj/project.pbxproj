@@ -10,7 +10,6 @@
 		2AAE59BE16F473A2007C7B11 /* UTBlockService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE59BD16F473A2007C7B11 /* UTBlockService.m */; };
 		2AAE59C116F47517007C7B11 /* UTPathFinderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE59C016F47517007C7B11 /* UTPathFinderModel.m */; };
 		2AAE59C516F489AD007C7B11 /* NSArray+reverseArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE59C416F489AD007C7B11 /* NSArray+reverseArray.m */; };
-		5C04012616F4D3D00030923F /* camera_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C04012516F4D3D00030923F /* camera_overlay.png */; };
 		2AAE59D416F4CCCF007C7B11 /* NavigationBarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AAE59D216F4CCCF007C7B11 /* NavigationBarBackground.png */; };
 		2AAE59D516F4CCCF007C7B11 /* NavigationBarBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AAE59D316F4CCCF007C7B11 /* NavigationBarBackground@2x.png */; };
 		2AAE59DC16F4CDF1007C7B11 /* checkinIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AAE59D816F4CDF1007C7B11 /* checkinIcon.png */; };
@@ -21,6 +20,7 @@
 		2AAE59E716F4CF57007C7B11 /* MakeToure-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AAE59E316F4CF55007C7B11 /* MakeToure-selected@2x.png */; };
 		2AAE59E816F4CF57007C7B11 /* MakeToure.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AAE59E416F4CF56007C7B11 /* MakeToure.png */; };
 		2AAE59E916F4CF57007C7B11 /* MakeToure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AAE59E516F4CF57007C7B11 /* MakeToure@2x.png */; };
+		5C04012616F4D3D00030923F /* camera_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C04012516F4D3D00030923F /* camera_overlay.png */; };
 		5C12F04A16F4A52100BD44EE /* plan2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C12F04816F4A52100BD44EE /* plan2.png */; };
 		5C12F04B16F4A52100BD44EE /* plan1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C12F04916F4A52100BD44EE /* plan1.png */; };
 		5C12F04F16F4A5AA00BD44EE /* UTLevelsPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C12F04E16F4A5AA00BD44EE /* UTLevelsPanel.m */; };

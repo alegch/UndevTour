@@ -80,28 +80,6 @@
     UTLevelsPanel *panel = [[UTLevelsPanel alloc] initWithFrame:CGRectMake(0, 0, 44, 44 * _house.levels.count) count:_house.levels.count];
     panel.panelDelegate = self;
     [self.view addSubview:panel];
-    
-//    UIBarButtonItem *tourButton  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon.png"] style:UIBarButtonItemStyleBordered handler:^(id sender) {
-//        
-//        NSMutableArray * items = [NSMutableArray array];
-//        for (UTExhibit *exhibit in [_house.levels[_selectedLevelIndex] exhibits]) {
-//            [items addObject:[[KNSelectorItem alloc] initWithDisplayValue:exhibit.name
-//                                                              selectValue:exhibit.name
-//                                                                    image:[UIImage imageNamed:exhibit.photoPath]]];
-//        }
-//        
-//        KNMultiItemSelector * selector = [[KNMultiItemSelector alloc] initWithItems:items delegate:self];
-//        UINavigationController * uinav = [[UINavigationController alloc] initWithRootViewController:selector];
-//        uinav.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal; // iPhone
-//        
-//        [self presentModalViewController:uinav animated:YES];
-//    }];
-//    self.navigationItem.leftBarButtonItem = tourButton;
-//    
-//    UIBarButtonItem *checkinButton  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon.png"] style:UIBarButtonItemStyleBordered handler:^(id sender) {
-//        
-//    }];
-//    self.navigationItem.rightBarButtonItem = checkinButton;
 }
 
 - (void)viewDidLoad {
