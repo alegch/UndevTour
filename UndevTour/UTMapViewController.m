@@ -200,7 +200,7 @@
                     [lines addObject:@{@"start": startPoint, @"end": prevPoint}];
                     startPoint = prevPoint;
                 }
-                else if([subPath indexOfObject:point] == subPath.count - 1) {
+                if([subPath indexOfObject:point] == subPath.count - 1) {
                     [lines addObject:@{@"start": startPoint, @"end": point}];
                 }
                 diff = newDiff;
