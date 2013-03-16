@@ -82,8 +82,6 @@
     [_scrollView addSubview:detailText];
     
     _scrollView.contentSize = CGSizeMake(310, CGRectGetMaxY(detailText.frame));
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated  {

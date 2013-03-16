@@ -31,6 +31,10 @@
     UTLevelView *_selectedLevelView;
     UTLevelsPanel *_panel;
     NSMutableArray *_levelsViews;
+    
+    UTExhibit *_lastExhibit;
+    
+    BOOL _needShowTourVc;
 }
 
 @end
@@ -98,10 +102,7 @@
     _panel.frame = RectSetOrigin(_panel.frame, 0, self.view.bounds.size.height - _panel.frame.size.height);
 }
 
-#pragma mark - buttons hendlers
-
-- (void)checkinButtonHendler
-{
+- (void)showQReader {
     ZBarReaderViewController *reader = [ZBarReaderViewController new];
     
     UIImageView *overlay = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"camera_overlay.png"]];
@@ -120,8 +121,7 @@
                             animated: YES];
 }
 
-- (void)makeToureButtonHendler
-{
+- (void)showTourChecker {
     NSMutableArray * items = [NSMutableArray array];
     for (UTExhibit *exhibit in [_house.levels[_selectedLevelIndex] exhibits]) {
         [items addObject:[[KNSelectorItem alloc] initWithDisplayValue:exhibit.name
@@ -134,6 +134,30 @@
     uinav.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal; // iPhone
     
     [self presentModalViewController:uinav animated:YES];
+}
+
+
+#pragma mark - buttons hendlers
+
+- (void)checkinButtonHendler
+{
+    [self showQReader];
+}
+
+- (void)makeToureButtonHendler
+{
+    if (_lastExhibit) {
+        [self showTourChecker];
+    } else {
+        [UIAlertView showAlertViewWithTitle:@"Внимание" message:@"Для начала найдите ближайший QR код и наведите на него камеру." cancelButtonTitle:@"Отмена" otherButtonTitles:@[@"Камера"] handler:^(UIAlertView *alertView, NSInteger index) {
+            if (index == 1) {
+                [self showQReader];
+                _needShowTourVc = YES;
+            }
+        }];
+    }
+    
+    
 }
 
 #pragma mark - Methods
@@ -234,9 +258,22 @@
     NSString *hash = symbol.data;
     NSLog(@"Hash:%@", hash);
     UTExhibit *ex = [_house exibitByHashCode:hash];
-    [self setCurrentPositionToExhibit:ex];
+    if (ex) {
+        _lastExhibit = ex;
+        [self setCurrentPositionToExhibit:ex];
+        
+        if (_needShowTourVc) {
+            _needShowTourVc = NO;
+            [reader dismissModalViewControllerAnimated:NO];
+            [self showTourChecker];
+        }
+    }
+    [reader dismissModalViewControllerAnimated:YES];
+}
 
-    [reader dismissModalViewControllerAnimated: YES];
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [picker dismissModalViewControllerAnimated:YES];
+    _needShowTourVc = NO;
 }
 
 #pragma mark - UTLevelViewDelegate
