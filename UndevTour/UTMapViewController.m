@@ -38,12 +38,30 @@
         _house = [builder buildHouseWithName:@"undev"];
         _levelsViews = [NSMutableArray array];
         _selectedLevelIndex = NSNotFound;
+        
+        self.title = @"Undev Toure";
     }
     return self;
 }
 
 - (void)loadView {
     [super loadView];
+    
+    UIButton *checkinButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *checkinImage = [UIImage imageNamed:@"checkinIcon.png"];
+    checkinButton.frame = CGRectMake(0.0f, 0.0f, checkinImage.size.width, checkinImage.size.height);
+    [checkinButton setImage:checkinImage forState:UIControlStateNormal];
+    [checkinButton setImage:[UIImage imageNamed:@"checkinIcon-selected.png"] forState:UIControlStateHighlighted];
+    [checkinButton addTarget:self action:@selector(checkinButtonHendler) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:checkinButton];
+    
+    UIButton *makeToureButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *makeToureImage = [UIImage imageNamed:@"MakeToure.png"];
+    makeToureButton.frame = CGRectMake(0.0f, 0.0f, makeToureImage.size.width, makeToureImage.size.height);
+    [makeToureButton setImage:makeToureImage forState:UIControlStateNormal];
+    [makeToureButton setImage:[UIImage imageNamed:@"MakeToure-selected.png"] forState:UIControlStateHighlighted];
+    [makeToureButton addTarget:self action:@selector(makeToureButtonHendler) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:makeToureButton];
     
     self.view.backgroundColor = [UIColor greenColor];
     
@@ -69,7 +87,17 @@
     for (UIView *v in _levelsViews) {
         v.frame = self.view.bounds;
     }
-    
+}
+
+#pragma mark - buttons hendlers
+
+- (void)checkinButtonHendler
+{
+
+}
+
+- (void)makeToureButtonHendler
+{
     NSMutableArray * items = [NSMutableArray array];
     for (UTExhibit *exhibit in [_house.levels[_selectedLevelIndex] exhibits]) {
         [items addObject:[[KNSelectorItem alloc] initWithDisplayValue:exhibit.name
@@ -80,7 +108,7 @@
     KNMultiItemSelector * selector = [[KNMultiItemSelector alloc] initWithItems:items delegate:self];
     UINavigationController * uinav = [[UINavigationController alloc] initWithRootViewController:selector];
     uinav.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal; // iPhone
-
+    
     [self presentModalViewController:uinav animated:YES];
 }
 
@@ -103,7 +131,7 @@
     [self setSelectedLevelViewIndex:index];
 }
 
-#pragma mark - 
+#pragma mark - KNMultiItemSelector Delegate
 
 -(void)selectorDidCancelSelection
 {
@@ -123,7 +151,11 @@
     UTExhibit *strtExhibit = [exhibits lastObject];
     [exhibits removeObject:strtExhibit];
 
-    [model findPathForObjects:exhibits startOn:strtExhibit];
+    NSArray *path = [model findPathForObjects:exhibits startOn:strtExhibit];
+    
+    for (NSArray *subPath in path) {
+        
+    }
 }
 
 @end
