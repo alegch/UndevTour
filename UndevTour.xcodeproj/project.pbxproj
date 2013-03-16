@@ -17,6 +17,10 @@
 		5C8764B416F4696000072EF5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C8764B316F4696000072EF5 /* Default@2x.png */; };
 		5C8764B616F4696000072EF5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C8764B516F4696000072EF5 /* Default-568h@2x.png */; };
 		5C8764D216F46C5F00072EF5 /* UTMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C8764D116F46C5F00072EF5 /* UTMapViewController.m */; };
+		5C8764E116F470A300072EF5 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C8764E016F470A300072EF5 /* icon.png */; };
+		5C8764E316F4711A00072EF5 /* exibit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5C8764E216F4711A00072EF5 /* exibit.jpg */; };
+		5C8764E816F4733000072EF5 /* plan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5C8764E716F4733000072EF5 /* plan.jpg */; };
+		5C8764EA16F4755000072EF5 /* undev.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C8764E916F4755000072EF5 /* undev.json */; };
 		DBAEF7F44E53451CA0474100 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AD444D48804F38BF510AFB /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +42,10 @@
 		5C8764D016F46C5F00072EF5 /* UTMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UTMapViewController.h; sourceTree = "<group>"; };
 		5C8764D116F46C5F00072EF5 /* UTMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UTMapViewController.m; sourceTree = "<group>"; };
 		5C8764D416F46D6400072EF5 /* UTMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UTMacros.h; sourceTree = "<group>"; };
+		5C8764E016F470A300072EF5 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		5C8764E216F4711A00072EF5 /* exibit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = exibit.jpg; sourceTree = "<group>"; };
+		5C8764E716F4733000072EF5 /* plan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = plan.jpg; sourceTree = "<group>"; };
+		5C8764E916F4755000072EF5 /* undev.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = undev.json; sourceTree = "<group>"; };
 		D7AD444D48804F38BF510AFB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -92,6 +100,7 @@
 				5C8764AE16F4696000072EF5 /* UTAppDelegate.h */,
 				5C8764AF16F4696000072EF5 /* UTAppDelegate.m */,
 				5C8764D416F46D6400072EF5 /* UTMacros.h */,
+				5C8764DD16F46FBB00072EF5 /* Resources */,
 				5C8764A616F4696000072EF5 /* Supporting Files */,
 			);
 			path = UndevTour;
@@ -118,6 +127,41 @@
 				5C8764D116F46C5F00072EF5 /* UTMapViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5C8764DD16F46FBB00072EF5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5C8764E416F4731900072EF5 /* Plans */,
+				5C8764DE16F46FBB00072EF5 /* Icons */,
+				5C8764DF16F46FBB00072EF5 /* Photos */,
+				5C8764E916F4755000072EF5 /* undev.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5C8764DE16F46FBB00072EF5 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				5C8764E016F470A300072EF5 /* icon.png */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		5C8764DF16F46FBB00072EF5 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				5C8764E216F4711A00072EF5 /* exibit.jpg */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		5C8764E416F4731900072EF5 /* Plans */ = {
+			isa = PBXGroup;
+			children = (
+				5C8764E716F4733000072EF5 /* plan.jpg */,
+			);
+			path = Plans;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +221,10 @@
 				5C8764B216F4696000072EF5 /* Default.png in Resources */,
 				5C8764B416F4696000072EF5 /* Default@2x.png in Resources */,
 				5C8764B616F4696000072EF5 /* Default-568h@2x.png in Resources */,
+				5C8764E116F470A300072EF5 /* icon.png in Resources */,
+				5C8764E316F4711A00072EF5 /* exibit.jpg in Resources */,
+				5C8764E816F4733000072EF5 /* plan.jpg in Resources */,
+				5C8764EA16F4755000072EF5 /* undev.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

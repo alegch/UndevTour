@@ -1,0 +1,110 @@
+ [
+  {
+  "image_path": "plan.jpg",
+  "z": 0,
+  "objects": [
+              {
+              "icon_path": "icon.png",
+              "name": "Оля реактив",
+              "description": "Описание эскпоната",
+              "photo_path": "exibit.jpg",
+              "position": {
+              "x": 10,
+              "y": 200
+              }
+              },
+              {
+              "icon_path": "icon.png",
+              "name": "Маша 0.5",
+              "description": "Описание эскпоната",
+              "photo_path": "exibit.jpg",
+              "position": {
+              "x": 100,
+              "y": 200
+              }
+              },
+              {
+              "icon_path": "icon.png",
+              "name": "Даша 3",
+              "description": "Описание эскпоната",
+              "photo_path": "exibit.jpg",
+              "position": {
+              "x": 200,
+              "y": 200
+              }
+              }
+              ]
+  },
+  {
+  "image_path": "plan.jpg",
+  "z": 0,
+  "objects": [
+              {
+              "icon_path": "icon.png",
+              "name": "Оля реактив",
+              "description": "Описание эскпоната",
+              "photo_path": "exibit.jpg",
+              "position": {
+              "x": 10,
+              "y": 200
+              }
+              },
+              {
+              "icon_path": "icon.png",
+              "name": "Маша 0.5",
+              "description": "Описание эскпоната",
+              "photo_path": "exibit.jpg",
+              "position": {
+              "x": 100,
+              "y": 200
+              }
+              },
+              {
+              "icon_path": "icon.png",
+              "name": "Даша 3",
+              "description": "Описание эскпоната",
+              "photo_path": "exibit.jpg",
+              "position": {
+              "x": 200,
+              "y": 200
+              }
+              }
+              ]
+  },
+  {
+  "image_path": "plan.jpg",
+  "z": 0,
+  "objects": [
+              {
+              "icon_path": "icon.png",
+              "name": "Оля реактив",
+              "description": "Описание эскпоната",
+              "photo_path": "exibit.jpg",
+              "position": {
+              "x": 10,
+              "y": 200
+              }
+              },
+              {
+              "icon_path": "icon.png",
+              "name": "Маша 0.5",
+              "description": "Описание эскпоната",
+              "photo_path": "exibit.jpg",
+              "position": {
+              "x": 100,
+              "y": 200
+              }
+              },
+              {
+              "icon_path": "icon.png",
+              "name": "Даша 3",
+              "description": "Описание эскпоната",
+              "photo_path": "exibit.jpg",
+              "position": {
+              "x": 200,
+              "y": 200
+              }
+              }
+              ]
+  }
+  ]/
