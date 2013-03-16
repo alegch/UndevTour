@@ -10,7 +10,7 @@
 
 @class UTLevel;
 
-@interface UTLevelView : UIScrollView
+@interface UTLevelView : UIScrollView <UIScrollViewDelegate>
 
 - (void)setLevel:(UTLevel *)level;
 
