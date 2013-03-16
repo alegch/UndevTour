@@ -13,6 +13,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"NavigationBarBackground.png"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{UITextAttributeTextColor: RGB(52,48,45), UITextAttributeTextShadowOffset: [NSValue valueWithUIOffset: UIOffsetZero]}];
+     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     [[UINavigationBar appearance] setTintColor:RGB(52, 48, 45)];

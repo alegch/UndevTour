@@ -41,12 +41,30 @@
         _house = [builder buildHouseWithName:@"undev"];
         _levelsViews = [NSMutableArray array];
         _selectedLevelIndex = NSNotFound;
+        
+        self.title = @"Undev Toure";
     }
     return self;
 }
 
 - (void)loadView {
     [super loadView];
+    
+    UIButton *checkinButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *checkinImage = [UIImage imageNamed:@"checkinIcon.png"];
+    checkinButton.frame = CGRectMake(0.0f, 0.0f, checkinImage.size.width, checkinImage.size.height);
+    [checkinButton setImage:checkinImage forState:UIControlStateNormal];
+    [checkinButton setImage:[UIImage imageNamed:@"checkinIcon-selected.png"] forState:UIControlStateHighlighted];
+    [checkinButton addTarget:self action:@selector(checkinButtonHendler) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:checkinButton];
+    
+    UIButton *makeToureButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage *makeToureImage = [UIImage imageNamed:@"MakeToure.png"];
+    makeToureButton.frame = CGRectMake(0.0f, 0.0f, makeToureImage.size.width, makeToureImage.size.height);
+    [makeToureButton setImage:makeToureImage forState:UIControlStateNormal];
+    [makeToureButton setImage:[UIImage imageNamed:@"MakeToure-selected.png"] forState:UIControlStateHighlighted];
+    [makeToureButton addTarget:self action:@selector(makeToureButtonHendler) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:makeToureButton];
     
     self.view.backgroundColor = [UIColor greenColor];
     
@@ -63,42 +81,27 @@
     panel.panelDelegate = self;
     [self.view addSubview:panel];
     
-    UIBarButtonItem *tourButton  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon.png"] style:UIBarButtonItemStyleBordered handler:^(id sender) {
-        
-        NSMutableArray * items = [NSMutableArray array];
-        for (UTExhibit *exhibit in [_house.levels[_selectedLevelIndex] exhibits]) {
-            [items addObject:[[KNSelectorItem alloc] initWithDisplayValue:exhibit.name
-                                                              selectValue:exhibit.name
-                                                                    image:[UIImage imageNamed:exhibit.photoPath]]];
-        }
-        
-        KNMultiItemSelector * selector = [[KNMultiItemSelector alloc] initWithItems:items delegate:self];
-        UINavigationController * uinav = [[UINavigationController alloc] initWithRootViewController:selector];
-        uinav.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal; // iPhone
-        
-        [self presentModalViewController:uinav animated:YES];
-    }];
-    self.navigationItem.leftBarButtonItem = tourButton;
-    
-    UIBarButtonItem *checkinButton  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon.png"] style:UIBarButtonItemStyleBordered handler:^(id sender) {
-        ZBarReaderViewController *reader = [ZBarReaderViewController new];
-        
-        UIImageView *overlay = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"camera_overlay.png"]];
-        
-        reader.cameraOverlayView = overlay;
-        reader.readerDelegate = self;
-        reader.supportedOrientationsMask = ZBarOrientationMaskAll;
-        
-        ZBarImageScanner *scanner = reader.scanner;
-        
-        [scanner setSymbology:0 config:ZBAR_CFG_ENABLE to:0];
-        [scanner setSymbology:ZBAR_QRCODE config:ZBAR_CFG_ENABLE to:1];
-        reader.readerView.zoom = 1.0;
-
-        [self presentModalViewController: reader
-                                animated: YES];
-    }];
-    self.navigationItem.rightBarButtonItem = checkinButton;
+//    UIBarButtonItem *tourButton  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon.png"] style:UIBarButtonItemStyleBordered handler:^(id sender) {
+//        
+//        NSMutableArray * items = [NSMutableArray array];
+//        for (UTExhibit *exhibit in [_house.levels[_selectedLevelIndex] exhibits]) {
+//            [items addObject:[[KNSelectorItem alloc] initWithDisplayValue:exhibit.name
+//                                                              selectValue:exhibit.name
+//                                                                    image:[UIImage imageNamed:exhibit.photoPath]]];
+//        }
+//        
+//        KNMultiItemSelector * selector = [[KNMultiItemSelector alloc] initWithItems:items delegate:self];
+//        UINavigationController * uinav = [[UINavigationController alloc] initWithRootViewController:selector];
+//        uinav.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal; // iPhone
+//        
+//        [self presentModalViewController:uinav animated:YES];
+//    }];
+//    self.navigationItem.leftBarButtonItem = tourButton;
+//    
+//    UIBarButtonItem *checkinButton  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon.png"] style:UIBarButtonItemStyleBordered handler:^(id sender) {
+//        
+//    }];
+//    self.navigationItem.rightBarButtonItem = checkinButton;
 }
 
 - (void)viewDidLoad {
@@ -109,6 +112,44 @@
     for (UIView *v in _levelsViews) {
         v.frame = self.view.bounds;
     }
+}
+
+#pragma mark - buttons hendlers
+
+- (void)checkinButtonHendler
+{
+    ZBarReaderViewController *reader = [ZBarReaderViewController new];
+    
+    UIImageView *overlay = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"camera_overlay.png"]];
+    
+    reader.cameraOverlayView = overlay;
+    reader.readerDelegate = self;
+    reader.supportedOrientationsMask = ZBarOrientationMaskAll;
+    
+    ZBarImageScanner *scanner = reader.scanner;
+    
+    [scanner setSymbology:0 config:ZBAR_CFG_ENABLE to:0];
+    [scanner setSymbology:ZBAR_QRCODE config:ZBAR_CFG_ENABLE to:1];
+    reader.readerView.zoom = 1.0;
+    
+    [self presentModalViewController: reader
+                            animated: YES];
+}
+
+- (void)makeToureButtonHendler
+{
+    NSMutableArray * items = [NSMutableArray array];
+    for (UTExhibit *exhibit in [_house.levels[_selectedLevelIndex] exhibits]) {
+        [items addObject:[[KNSelectorItem alloc] initWithDisplayValue:exhibit.name
+                                                          selectValue:exhibit.name
+                                                                image:[UIImage imageNamed:exhibit.photoPath]]];
+    }
+    
+    KNMultiItemSelector * selector = [[KNMultiItemSelector alloc] initWithItems:items delegate:self];
+    UINavigationController * uinav = [[UINavigationController alloc] initWithRootViewController:selector];
+    uinav.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal; // iPhone
+    
+    [self presentModalViewController:uinav animated:YES];
 }
 
 #pragma mark - Methods
@@ -130,7 +171,7 @@
     [self setSelectedLevelViewIndex:index];
 }
 
-#pragma mark - 
+#pragma mark - KNMultiItemSelector Delegate
 
 -(void)selectorDidCancelSelection
 {
@@ -150,7 +191,11 @@
     UTExhibit *strtExhibit = [exhibits lastObject];
     [exhibits removeObject:strtExhibit];
 
-    [model findPathForObjects:exhibits startOn:strtExhibit];
+    NSArray *path = [model findPathForObjects:exhibits startOn:strtExhibit];
+    
+    for (NSArray *subPath in path) {
+        
+    }
 }
 
 #pragma mark - QR-reader delegate 
