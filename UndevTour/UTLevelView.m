@@ -21,6 +21,7 @@
 }
 
 - (void)setLevel:(UTLevel *)level {
+    [[self subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     UIImage *mapImage = [UIImage imageNamed:level.imagePath];
     UIImageView *mapImageView = [[UIImageView alloc] initWithImage:mapImage];
     [self addSubview:mapImageView];

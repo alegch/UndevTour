@@ -15,11 +15,14 @@
 #import "UTExhibit.h"
 #import "UTPathFinderModel.h"
 #import "UTBlockService.h"
+#import "UTLevelsPanel.h"
 
-@interface UTMapViewController () {
+@interface UTMapViewController () <UTLevelsPanelDelegate>
+{
     UTHouse *_house;
 
-    UTLevelView *_selectedLevel;
+    NSInteger _selectedLevelIndex;
+    UTLevelView *_selectedLevelView;
     NSMutableArray *_levelsViews;
 }
 
@@ -33,7 +36,8 @@
     if (self) {
         UTHouseBuilder *builder = [[UTHouseBuilder alloc] init];
         _house = [builder buildHouseWithName:@"undev"];
-        _levelsViews = [NSMutableArray array];
+        _levelsViews = [NSMutableArray array];\
+        _selectedLevelIndex = NSNotFound;
 
         UTLevel *level = _house.levels[0];
 
@@ -60,8 +64,12 @@
         [levelView setLevel:level];
         [_levelsViews addObject:levelView];
     }
-
+    
     [self setSelectedLevelViewIndex:0];
+    
+    UTLevelsPanel *panel = [[UTLevelsPanel alloc] initWithFrame:CGRectMake(0, 0, 44, 44 * _house.levels.count) count:_house.levels.count];
+    panel.panelDelegate = self;
+    [self.view addSubview:panel];
 }
 
 - (void)viewDidLoad {
@@ -77,12 +85,20 @@
 #pragma mark - Methods
 - (void)setSelectedLevelViewIndex:(NSInteger)index {
     NSAssert(index < [_levelsViews count], @"Level view index out of range");
-    if (_selectedLevel) {
-        [_selectedLevel removeFromSuperview];
+    if (_selectedLevelView) {
+        [_selectedLevelView removeFromSuperview];
     }
     
     UTLevelView *levelView = [_levelsViews objectAtIndex:index];
     [self.view addSubview:levelView];
+    [self.view sendSubviewToBack:levelView];
+    _selectedLevelView = levelView;
+    _selectedLevelIndex = index;
+}
+
+#pragma mark - UILevelsPanel Delegate
+- (void)onSelectLevelWithIndex:(NSInteger)index {
+    [self setSelectedLevelViewIndex:index];
 }
 
 @end
