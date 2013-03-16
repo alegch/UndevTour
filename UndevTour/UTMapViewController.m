@@ -31,6 +31,7 @@
     UTLevelView *_selectedLevelView;
     UTLevelsPanel *_panel;
     NSMutableArray *_levelsViews;
+    UTExhibit *_currentExhibit;
 }
 
 @end
@@ -151,6 +152,7 @@
 }
 
 - (void)setCurrentPositionToExhibit:(UTExhibit *)exhibit {
+    _currentExhibit = exhibit;
     NSInteger exhibitLevelIndex = [_house levelIndexByExhibit:exhibit];
     NSLog(@"set exibit index: %d", exhibitLevelIndex);
     
@@ -185,11 +187,17 @@
     UTBlockService *blockService = [[UTBlockService alloc] initWithBlocks:level.map];
     UTPathFinderModel *model = [[UTPathFinderModel alloc] initWithBlockService:blockService];
 
-    NSMutableArray *exhibits = [NSMutableArray arrayWithArray:level.exhibits];
-    UTExhibit *strtExhibit = [exhibits lastObject];
-    [exhibits removeObject:strtExhibit];
-
-    NSArray *path = [model findPathForObjects:exhibits startOn:strtExhibit];
+    NSMutableArray *exhibits = [NSMutableArray array];
+    
+    for (UTExhibit *exhibit in level.exhibits) {
+        if ([selectedItems indexOfObject:exhibit.name] != NSNotFound) {
+            [exhibits addObject:exhibit];
+        }
+    }
+    
+    [exhibits removeObject:_currentExhibit];
+    
+    NSArray *path = [model findPathForObjects:exhibits startOn:_currentExhibit];
     
     NSMutableArray *pathWhisLines = [NSMutableArray arrayWithCapacity:path.count];
     for (NSArray *subPath in path) {
