@@ -150,6 +150,7 @@
     NSInteger exhibitLevelIndex = [_house levelIndexByExhibit:exhibit];
     NSLog(@"set exibit index: %d", exhibitLevelIndex);
     [self setSelectedLevelViewIndex:exhibitLevelIndex];
+    [_selectedLevelView setCenterToExhibit:exhibit];
     [_panel setSelectedIndex:exhibitLevelIndex];
 }
 

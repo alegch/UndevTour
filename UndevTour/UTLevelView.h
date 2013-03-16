@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class UTLevel;
+@class UTExhibit;
 
 @interface UTLevelView : UIScrollView <UIScrollViewDelegate>
 
 - (void)setLevel:(UTLevel *)level;
+- (void)setCenterToExhibit:(UTExhibit*)exhibit;
 
 @end
 

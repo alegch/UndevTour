@@ -55,6 +55,15 @@
     }
 }
 
+- (void)setCenterToExhibit:(UTExhibit*)exhibit
+{
+    CGRect visibleRect = CGRectMake(([exhibit.coordinate CGPointValue].x - self.frame.size.width / 2.0f) * self.zoomScale,
+                                    ([exhibit.coordinate CGPointValue].y - self.frame.size.height / 2.0f)  * self.zoomScale,
+                                    self.frame.size.width,
+                                    self.frame.size.height);
+    [self scrollRectToVisible:visibleRect animated:YES];
+}
+
 #pragma marl - scroll view delegate
 
 - (UIView*)viewForZoomingInScrollView:(UIScrollView *)scrollView {
