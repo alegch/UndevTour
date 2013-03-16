@@ -17,12 +17,6 @@ profile
 DerivedData
 .idea/
 
-docset-installed.txt
-Podfile.lock
-
-Pods/.DS_Store
-UndevTour/.DS_Store
+Pods/*
 *.swp
 *.lock
-UndevTour.xcworkspace/xcuserdata/*
-
