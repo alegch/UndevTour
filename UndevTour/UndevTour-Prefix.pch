@@ -15,3 +15,6 @@
     #import "UTMacros.h"
     #import "NSArray+reverseArray.h"
 #endif
+
+#define IMAGE_SCALE 50.0f
+#define MAP_SCALE 1.0f

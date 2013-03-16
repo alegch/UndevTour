@@ -9,6 +9,10 @@
 #import "UTMapViewController.h"
 #import "UTHouseBuilder.h"
 #import "UTHouse.h"
+#import "UTLevel.h"
+#import "UTExhibit.h"
+#import "UTPathFinderModel.h"
+#import "UTBlockService.h"
 
 @interface UTMapViewController () {
     UTHouseBuilder *_builder;
@@ -25,6 +29,17 @@
     if (self) {
         _builder = [[UTHouseBuilder alloc] init];
         _house = [_builder buildHouseWithName:@"undev"];
+
+        UTLevel *level = _house.levels[0];
+
+        UTBlockService *blockService = [[UTBlockService alloc] initWithBlocks:level.map];
+        UTPathFinderModel *model = [[UTPathFinderModel alloc] initWithBlockService:blockService];
+        
+        NSMutableArray *exhibits = [NSMutableArray arrayWithArray:level.exhibits];
+        UTExhibit *strtExhibit = [exhibits lastObject];
+        [exhibits removeObject:strtExhibit];
+        
+        [model findPathForObjects:exhibits startOn:strtExhibit];
     }
     return self;
 }

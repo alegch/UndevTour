@@ -34,8 +34,8 @@
     FindingTracer *tracer = [[FindingTracer alloc] init];
     
     [finder find:self.blockService
-            from:[IntPoint pointWithX:start.x withY:start.y]
-              to:[IntPoint pointWithX:finish.x withY:finish.y]
+            from:[IntPoint pointWithX:start.x / IMAGE_SCALE * MAP_SCALE withY:start.y / IMAGE_SCALE * MAP_SCALE]
+              to:[IntPoint pointWithX:finish.x / IMAGE_SCALE * MAP_SCALE withY:finish.y / IMAGE_SCALE * MAP_SCALE]
       withTracer:tracer];
     return tracer;
 }

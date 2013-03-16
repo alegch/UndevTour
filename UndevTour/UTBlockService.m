@@ -10,12 +10,12 @@
 
 @implementation UTBlockService
 
-- (id)initWithWidth:(int)width height:(int)height blocks:(NSArray*)blocks
+- (id)initWithBlocks:(NSArray*)blocks
 {
     self = [super init];
     if (self) {
-        self.width = width;
-        self.height = height;
+        self.width = [blocks[0] count];
+        self.height = blocks.count;
         self.blocks = blocks;
     }
     return self;
