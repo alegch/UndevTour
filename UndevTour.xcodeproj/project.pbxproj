@@ -10,6 +10,7 @@
 		2AAE59BE16F473A2007C7B11 /* UTBlockService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE59BD16F473A2007C7B11 /* UTBlockService.m */; };
 		2AAE59C116F47517007C7B11 /* UTPathFinderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE59C016F47517007C7B11 /* UTPathFinderModel.m */; };
 		2AAE59C516F489AD007C7B11 /* NSArray+reverseArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE59C416F489AD007C7B11 /* NSArray+reverseArray.m */; };
+		5C04012616F4D3D00030923F /* camera_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C04012516F4D3D00030923F /* camera_overlay.png */; };
 		5C12F04A16F4A52100BD44EE /* plan2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C12F04816F4A52100BD44EE /* plan2.png */; };
 		5C12F04B16F4A52100BD44EE /* plan1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C12F04916F4A52100BD44EE /* plan1.png */; };
 		5C12F04F16F4A5AA00BD44EE /* UTLevelsPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C12F04E16F4A5AA00BD44EE /* UTLevelsPanel.m */; };
@@ -44,6 +45,7 @@
 		2AAE59C316F489AD007C7B11 /* NSArray+reverseArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+reverseArray.h"; sourceTree = "<group>"; };
 		2AAE59C416F489AD007C7B11 /* NSArray+reverseArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+reverseArray.m"; sourceTree = "<group>"; };
 		315042F499E646C5BDC7CBD8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		5C04012516F4D3D00030923F /* camera_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_overlay.png; sourceTree = "<group>"; };
 		5C12F04816F4A52100BD44EE /* plan2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plan2.png; sourceTree = "<group>"; };
 		5C12F04916F4A52100BD44EE /* plan1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plan1.png; sourceTree = "<group>"; };
 		5C12F04D16F4A5AA00BD44EE /* UTLevelsPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UTLevelsPanel.h; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		5C8764DD16F46FBB00072EF5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5C04012516F4D3D00030923F /* camera_overlay.png */,
 				5C8764E416F4731900072EF5 /* Plans */,
 				5C8764DE16F46FBB00072EF5 /* Icons */,
 				5C8764DF16F46FBB00072EF5 /* Photos */,
@@ -307,6 +310,7 @@
 				5C8764EA16F4755000072EF5 /* undev.json in Resources */,
 				5C12F04A16F4A52100BD44EE /* plan2.png in Resources */,
 				5C12F04B16F4A52100BD44EE /* plan1.png in Resources */,
+				5C04012616F4D3D00030923F /* camera_overlay.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

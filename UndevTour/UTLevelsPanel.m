@@ -22,7 +22,7 @@
         for (int i = 0; i < count; i++) {
             UIButton *lvlBtn = [UIButton buttonWithType:UIButtonTypeCustom];
             [lvlBtn setFrame:CGRectMake(0, yOffset, 44, 44)];
-            [lvlBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+            [lvlBtn setTitleColor:[UIColor colorWithRed:0.46 green:0.8 blue:0.9 alpha:1.0] forState:UIControlStateNormal];
             [lvlBtn setTitle:[NSString stringWithFormat:@"%d", i] forState:UIControlStateNormal];
             [lvlBtn addTarget:self action:@selector(onLevelButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:lvlBtn];
@@ -42,7 +42,7 @@
     
     if (_selectedIndex != NSNotFound) {
         UIButton *selectedBtn = [_butons objectAtIndex:_selectedIndex];
-        [selectedBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        [selectedBtn setTitleColor:[UIColor colorWithRed:0.46 green:0.8 blue:0.9 alpha:1.0] forState:UIControlStateNormal];
     }
     
     _selectedIndex = index;

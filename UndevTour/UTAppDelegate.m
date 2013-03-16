@@ -14,6 +14,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    [[UINavigationBar appearance] setTintColor:RGB(52, 48, 45)];
 
     UTMapViewController *vc = [[UTMapViewController alloc] init];
     UINavigationController *navVc = [[UINavigationController alloc] initWithRootViewController:vc];

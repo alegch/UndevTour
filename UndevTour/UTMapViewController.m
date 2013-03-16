@@ -17,7 +17,10 @@
 #import "UTBlockService.h"
 #import "UTLevelsPanel.h"
 
-@interface UTMapViewController () <UTLevelsPanelDelegate>
+#import <ZBarSDK/ZBarSDK.h>
+
+@interface UTMapViewController () <UTLevelsPanelDelegate,
+                                   ZBarReaderDelegate>
 {
     UTHouse *_house;
 
@@ -59,6 +62,43 @@
     UTLevelsPanel *panel = [[UTLevelsPanel alloc] initWithFrame:CGRectMake(0, 0, 44, 44 * _house.levels.count) count:_house.levels.count];
     panel.panelDelegate = self;
     [self.view addSubview:panel];
+    
+    UIBarButtonItem *tourButton  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon.png"] style:UIBarButtonItemStyleBordered handler:^(id sender) {
+        
+        NSMutableArray * items = [NSMutableArray array];
+        for (UTExhibit *exhibit in [_house.levels[_selectedLevelIndex] exhibits]) {
+            [items addObject:[[KNSelectorItem alloc] initWithDisplayValue:exhibit.name
+                                                              selectValue:exhibit.name
+                                                                    image:[UIImage imageNamed:exhibit.photoPath]]];
+        }
+        
+        KNMultiItemSelector * selector = [[KNMultiItemSelector alloc] initWithItems:items delegate:self];
+        UINavigationController * uinav = [[UINavigationController alloc] initWithRootViewController:selector];
+        uinav.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal; // iPhone
+        
+        [self presentModalViewController:uinav animated:YES];
+    }];
+    self.navigationItem.leftBarButtonItem = tourButton;
+    
+    UIBarButtonItem *checkinButton  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon.png"] style:UIBarButtonItemStyleBordered handler:^(id sender) {
+        ZBarReaderViewController *reader = [ZBarReaderViewController new];
+        
+        UIImageView *overlay = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"camera_overlay.png"]];
+        
+        reader.cameraOverlayView = overlay;
+        reader.readerDelegate = self;
+        reader.supportedOrientationsMask = ZBarOrientationMaskAll;
+        
+        ZBarImageScanner *scanner = reader.scanner;
+        
+        [scanner setSymbology:0 config:ZBAR_CFG_ENABLE to:0];
+        [scanner setSymbology:ZBAR_QRCODE config:ZBAR_CFG_ENABLE to:1];
+        reader.readerView.zoom = 1.0;
+
+        [self presentModalViewController: reader
+                                animated: YES];
+    }];
+    self.navigationItem.rightBarButtonItem = checkinButton;
 }
 
 - (void)viewDidLoad {
@@ -69,19 +109,6 @@
     for (UIView *v in _levelsViews) {
         v.frame = self.view.bounds;
     }
-    
-    NSMutableArray * items = [NSMutableArray array];
-    for (UTExhibit *exhibit in [_house.levels[_selectedLevelIndex] exhibits]) {
-        [items addObject:[[KNSelectorItem alloc] initWithDisplayValue:exhibit.name
-                                                          selectValue:exhibit.name
-                                                                image:[UIImage imageNamed:exhibit.photoPath]]];
-    }
-    
-    KNMultiItemSelector * selector = [[KNMultiItemSelector alloc] initWithItems:items delegate:self];
-    UINavigationController * uinav = [[UINavigationController alloc] initWithRootViewController:selector];
-    uinav.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal; // iPhone
-
-    [self presentModalViewController:uinav animated:YES];
 }
 
 #pragma mark - Methods
@@ -124,6 +151,21 @@
     [exhibits removeObject:strtExhibit];
 
     [model findPathForObjects:exhibits startOn:strtExhibit];
+}
+
+#pragma mark - QR-reader delegate 
+- (void) imagePickerController: (UIImagePickerController*) reader
+ didFinishPickingMediaWithInfo: (NSDictionary*) info
+{
+    id<NSFastEnumeration> results =
+    [info objectForKey: ZBarReaderControllerResults];
+    ZBarSymbol *symbol = nil;
+    for(symbol in results)
+        break;
+    
+    NSString *hash = symbol.data;
+    NSLog(@"%@", hash);
+    [reader dismissModalViewControllerAnimated: YES];
 }
 
 @end
