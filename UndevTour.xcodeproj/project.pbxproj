@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2AAE59BE16F473A2007C7B11 /* UTBlockService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE59BD16F473A2007C7B11 /* UTBlockService.m */; };
+		2AAE59C116F47517007C7B11 /* UTPathFinderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE59C016F47517007C7B11 /* UTPathFinderModel.m */; };
 		5C8764A016F4696000072EF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C87649F16F4696000072EF5 /* UIKit.framework */; };
 		5C8764A216F4696000072EF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8764A116F4696000072EF5 /* Foundation.framework */; };
 		5C8764A416F4696000072EF5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C8764A316F4696000072EF5 /* CoreGraphics.framework */; };
@@ -33,6 +34,8 @@
 /* Begin PBXFileReference section */
 		2AAE59BC16F473A2007C7B11 /* UTBlockService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UTBlockService.h; sourceTree = "<group>"; };
 		2AAE59BD16F473A2007C7B11 /* UTBlockService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UTBlockService.m; sourceTree = "<group>"; };
+		2AAE59BF16F47517007C7B11 /* UTPathFinderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UTPathFinderModel.h; sourceTree = "<group>"; };
+		2AAE59C016F47517007C7B11 /* UTPathFinderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UTPathFinderModel.m; sourceTree = "<group>"; };
 		315042F499E646C5BDC7CBD8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		5C87649B16F4696000072EF5 /* UndevTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UndevTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C87649F16F4696000072EF5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -97,6 +100,8 @@
 				5C87650516F47C2900072EF5 /* UTLevelBulder.m */,
 				5C87650716F47DDF00072EF5 /* UTExhibit.h */,
 				5C87650816F47DDF00072EF5 /* UTExhibit.m */,
+				2AAE59BF16F47517007C7B11 /* UTPathFinderModel.h */,
+				2AAE59C016F47517007C7B11 /* UTPathFinderModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 				5C87650316F47A1300072EF5 /* UTLevel.m in Sources */,
 				5C87650616F47C2900072EF5 /* UTLevelBulder.m in Sources */,
 				5C87650916F47DE000072EF5 /* UTExhibit.m in Sources */,
+				2AAE59C116F47517007C7B11 /* UTPathFinderModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

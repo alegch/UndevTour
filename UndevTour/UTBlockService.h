@@ -12,7 +12,9 @@
 @interface UTBlockService : NSObject <BlockService>
 @property int width;
 @property int height;
+@property (nonatomic, strong) NSArray *blocks;
 
--(BOOL)isBlock:(int)x :(int)y;
+- (id)initWithWidth:(int)width height:(int)height blocks:(NSArray*)blocks;
+- (BOOL)isBlock:(int)x :(int)y;
 
 @end

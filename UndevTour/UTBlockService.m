@@ -8,11 +8,18 @@
 
 #import "UTBlockService.h"
 
-@interface UTBlockService ()
-@property (nonatomic, strong) NSMutableArray *blocks;
-@end
-
 @implementation UTBlockService
+
+- (id)initWithWidth:(int)width height:(int)height blocks:(NSArray*)blocks
+{
+    self = [super init];
+    if (self) {
+        self.width = width;
+        self.height = height;
+        self.blocks = blocks;
+    }
+    return self;
+}
 
 
 - (BOOL)isBlock:(int)x :(int)y
