@@ -16,6 +16,7 @@
 #import "UTPathFinderModel.h"
 #import "UTBlockService.h"
 #import "UTLevelsPanel.h"
+#import "IntPoint.h"
 
 #import <ZBarSDK/ZBarSDK.h>
 
@@ -181,9 +182,34 @@
 
     NSArray *path = [model findPathForObjects:exhibits startOn:strtExhibit];
     
+    NSMutableArray *pathWhisLines = [NSMutableArray arrayWithCapacity:path.count];
     for (NSArray *subPath in path) {
+        NSMutableArray *lines = [NSMutableArray array];
+        [pathWhisLines addObject:lines];
         
+        IntPoint *startPoint = nil;
+        IntPoint *prevPoint = nil;
+        IntPoint *diff = nil;
+        for (IntPoint *point in subPath) {
+            if (!startPoint) {
+                startPoint = point;
+            }
+            if (prevPoint != nil) {
+                IntPoint *newDiff = [IntPoint pointWithX:point.x - prevPoint.x withY:point.y - prevPoint.y];
+                if (diff && (diff.x != newDiff.x || diff.y != newDiff.y)) {
+                    [lines addObject:@{@"start": startPoint, @"end": prevPoint}];
+                    startPoint = prevPoint;
+                }
+                else if([subPath indexOfObject:point] == subPath.count - 1) {
+                    [lines addObject:@{@"start": startPoint, @"end": point}];
+                }
+                diff = newDiff;
+            }
+            prevPoint = point;
+        }
     }
+    
+    [_selectedLevelView showPath:pathWhisLines];
 }
 
 #pragma mark - QR-reader delegate 
