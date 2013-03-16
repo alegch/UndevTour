@@ -13,6 +13,6 @@
 @interface UTLevelBulder : NSObject
 
 #pragma mark - Methods
-- (void)buildLevelFromDictionary:(NSDictionary *)dictionary;
+- (UTLevel *)buildLevelFromDictionary:(NSDictionary *)dictionary;
 
 @end

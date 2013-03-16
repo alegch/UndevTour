@@ -7,8 +7,13 @@
 //
 
 #import "UTMapViewController.h"
+#import "UTHouseBuilder.h"
+#import "UTHouse.h"
 
-@interface UTMapViewController ()
+@interface UTMapViewController () {
+    UTHouseBuilder *_builder;
+    UTHouse *_house;
+}
 
 @end
 
@@ -18,7 +23,8 @@
 - (id)init {
     self = [super init];
     if (self) {
-        
+        _builder = [[UTHouseBuilder alloc] init];
+        _house = [_builder buildHouseWithName:@"undev"];
     }
     return self;
 }
