@@ -36,7 +36,7 @@
               "name": "Zbsь",
               "description": "Экспонат родился 17 марта 2014 года в 12:00 утра. К сожалению из за пьянства в утробе челюсть свело еще при рождении. ",
               "photo_path": "IMG_0298.JPG",
-              "hash":"3",
+              "hash":"1",
               "position": {
               "x": 66,
               "y": 139
@@ -48,7 +48,7 @@
               "name": "Сливная яма",
               "description": "Яма образовалась буквально за сутки и растет с каждый часом. Эксперты предполагают, что в в здании обитает отряд мексиканцев-беженцев",
               "photo_path": "IMG_0296.JPG",
-              "hash":"4",
+              "hash":"2",
               "position": {
               "x": 117,
               "y": 193
@@ -60,7 +60,7 @@
               "name": "Стол для четвертования",
               "description": "Еще в древности",
               "photo_path": "IMG_0295.JPG",
-              "hash":"5",
+              "hash":"3",
               "position": {
               "x": 100,
               "y": 508
@@ -72,7 +72,7 @@
               "name": "Макс",
               "description": "Редкий зверь, довольно проворен. Руками не трогать. Не кормить.",
               "photo_path": "IMG_0279.JPG",
-              "hash":"5",
+              "hash":"4",
               "position": {
               "x": 113,
               "y": 40
@@ -96,7 +96,7 @@
               "name": "Яна",
               "description": "Девочка-программист. Экспонат занесен в красную книгу.",
               "photo_path": "IMG_0281.JPG",
-              "hash":"5",
+              "hash":"6",
               "position": {
               "x": 62,
               "y": 150
@@ -108,7 +108,7 @@
               "name": "Павел",
               "description": "Пишет движок для соревнований",
               "photo_path": "IMG_0284.JPG",
-              "hash":"5",
+              "hash":"7",
               "position": {
               "x": 141,
               "y": 136
@@ -120,7 +120,7 @@
               "name": "Суровые ребята пишущие на vim(Кирилл, Олег, Василий)",
               "description": "Еще в древности",
               "photo_path": "IMG_0285.JPG",
-              "hash":"5",
+              "hash":"8",
               "position": {
               "x": 460,
               "y": 138
@@ -132,7 +132,7 @@
               "name": "Юра",
               "description": "Юра. Просто Юра.",
               "photo_path": "IMG_0286.JPG",
-              "hash":"5",
+              "hash":"9",
               "position": {
               "x": 487,
               "y": 138
@@ -144,7 +144,7 @@
               "name": "Название чето значит, но чего не понятно.",
               "description": "Глыба",
               "photo_path": "IMG_0287.JPG",
-              "hash":"5",
+              "hash":"10",
               "position": {
               "x": 363,
               "y": 62
@@ -156,7 +156,7 @@
               "name": "Веселая ферма",
               "description": "JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS",
               "photo_path": "IMG_0288.JPG",
-              "hash":"5",
+              "hash":"11",
               "position": {
               "x": 461,
               "y": 263
@@ -168,7 +168,7 @@
               "name": "Женя. Саня",
               "description": "Женя. Саня.",
               "photo_path": "IMG_0291.JPG",
-              "hash":"5",
+              "hash":"12",
               "position": {
               "x": 440,
               "y": 439
@@ -180,7 +180,7 @@
               "name": "Аааад",
               "description": "Ад",
               "photo_path": "IMG_0292.JPG",
-              "hash":"5",
+              "hash":"13",
               "position": {
               "x": 425,
               "y": 570
@@ -219,7 +219,7 @@
               "name": "Спич",
               "description": "Описание эскпоната",
               "photo_path": "exibit.jpg",
-              "hash":"6",
+              "hash":"14",
               "position": {
               "x": 10,
               "y": 600
@@ -231,7 +231,7 @@
               "name": "Илья",
               "description": "Описание эскпоната",
               "photo_path": "exibit.jpg",
-              "hash":"7",
+              "hash":"15",
               "position": {
               "x": 320,
               "y": 320
@@ -243,7 +243,7 @@
               "name": "Толя",
               "description": "Описание эскпоната",
               "photo_path": "exibit.jpg",
-              "hash":"8",
+              "hash":"16",
               "position": {
               "x": 400,
               "y": 0
