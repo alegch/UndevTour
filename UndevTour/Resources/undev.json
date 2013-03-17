@@ -33,9 +33,9 @@
               {
               "icon_path": "checkinIcon-selected.png",
               "selected_icon_path": "checkinRed.png",
-              "name": "Натаха",
-              "description": "Описание эскпоната",
-              "photo_path": "exibit.jpg",
+              "name": "Zbsь",
+              "description": "Экспонат родился 17 марта 2014 года в 12:00 утра. К сожалению из за пьянства в утробе челюсть свело еще при рождении. ",
+              "photo_path": "IMG_0298.JPG",
               "hash":"3",
               "position": {
               "x": 5,
@@ -45,9 +45,9 @@
               {
               "icon_path": "checkinIcon-selected.png",
               "selected_icon_path": "checkinRed.png",
-              "name": "Кристина",
-              "description": "Описание эскпоната",
-              "photo_path": "exibit.jpg",
+              "name": "Сливная яма",
+              "description": "Яма образовалась буквально за сутки и растет с каждый часом. Эксперты предполагают, что в в здании обитает отряд мексиканцев-беженцев",
+              "photo_path": "IMG_0296.JPG",
               "hash":"4",
               "position": {
               "x": 100,
@@ -57,9 +57,126 @@
               {
               "icon_path": "checkinIcon-selected.png",
               "selected_icon_path": "checkinRed.png",
-              "name": "Вадим",
-              "description": "Описание эскпоната",
-              "photo_path": "exibit.jpg",
+              "name": "Стол для четвертования",
+              "description": "Еще в древности",
+              "photo_path": "IMG_0295.JPG",
+              "hash":"5",
+              "position": {
+              "x": 200,
+              "y": 200,
+              }
+              },
+              {
+              "icon_path": "checkinIcon-selected.png",
+              "selected_icon_path": "checkinRed.png",
+              "name": "Макс",
+              "description": "Редкий зверь, довольно проворен. Руками не трогать. Не кормить.",
+              "photo_path": "IMG_0295.JPG",
+              "hash":"5",
+              "position": {
+              "x": 200,
+              "y": 200,
+              }
+              },
+              {
+              "icon_path": "checkinIcon-selected.png",
+              "selected_icon_path": "checkinRed.png",
+              "name": "Юра",
+              "description": "работает с CMMP плазмоидом",
+              "photo_path": "IMG_0280.JPG",
+              "hash":"5",
+              "position": {
+              "x": 200,
+              "y": 200,
+              }
+              },
+              {
+              "icon_path": "checkinIcon-selected.png",
+              "selected_icon_path": "checkinRed.png",
+              "name": "Яна",
+              "description": "Девочка-программист. Экспонат занесен в красную книгу.",
+              "photo_path": "IMG_0281.JPG",
+              "hash":"5",
+              "position": {
+              "x": 200,
+              "y": 200,
+              }
+              },
+              {
+              "icon_path": "checkinIcon-selected.png",
+              "selected_icon_path": "checkinRed.png",
+              "name": "Павел",
+              "description": "Пишет движок для соревнований",
+              "photo_path": "IMG_0284.JPG",
+              "hash":"5",
+              "position": {
+              "x": 200,
+              "y": 200,
+              }
+              },
+              {
+              "icon_path": "checkinIcon-selected.png",
+              "selected_icon_path": "checkinRed.png",
+              "name": "Суровые ребята пишущие на vim(Кирилл, Олег, Василий)",
+              "description": "Еще в древности",
+              "photo_path": "IMG_0295.JPG",
+              "hash":"5",
+              "position": {
+              "x": 200,
+              "y": 200,
+              }
+              },
+              {
+              "icon_path": "checkinIcon-selected.png",
+              "selected_icon_path": "checkinRed.png",
+              "name": "Юра",
+              "description": "Юра. Просто Юра.",
+              "photo_path": "IMG_0286.JPG",
+              "hash":"5",
+              "position": {
+              "x": 200,
+              "y": 200,
+              },
+              {
+              "icon_path": "checkinIcon-selected.png",
+              "selected_icon_path": "checkinRed.png",
+              "name": "Название чето значит, но чего не понятно.",
+              "description": "Глыба",
+              "photo_path": "IMG_0287.JPG",
+              "hash":"5",
+              "position": {
+              "x": 200,
+              "y": 200,
+              },
+              {
+              "icon_path": "checkinIcon-selected.png",
+              "selected_icon_path": "checkinRed.png",
+              "name": "Веселая ферма",
+              "description": "JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS",
+              "photo_path": "IMG_0286.JPG",
+              "hash":"5",
+              "position": {
+              "x": 200,
+              "y": 200,
+              },
+              {
+              "icon_path": "checkinIcon-selected.png",
+              "selected_icon_path": "checkinRed.png",
+              "name": "Женя. Саня",
+              "description": "Женя. Саня.",
+              "photo_path": "IMG_0286.JPG",
+              "hash":"5",
+              "position": {
+              "x": 200,
+              "y": 200,
+              }
+              },
+              {
+              "icon_path": "checkinIcon-selected.png",
+              "selected_icon_path": "checkinRed.png",
+              "name": "Аааад",
+              "description": "Ад",
+              "photo_path": "IMG_0286.JPG",
               "hash":"5",
               "position": {
               "x": 200,
