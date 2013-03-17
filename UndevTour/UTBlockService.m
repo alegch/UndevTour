@@ -24,7 +24,7 @@
 
 - (BOOL)isBlock:(int)x :(int)y
 {
-    return [self.blocks[x][y] boolValue];
+    return [self.blocks[y][x] boolValue];
 }
 
 @end

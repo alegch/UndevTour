@@ -37,7 +37,7 @@
 - (NSInteger)levelIndexByExhibit:(UTExhibit *)exhibit {
     for (UTLevel *l in self.levels) {
         for (UTExhibit *ex in l.exhibits) {
-            if (ex == exhibit) {
+            if ([ex.hash isEqual:exhibit.hash]) {
                 return [l.z integerValue];
             }
         }

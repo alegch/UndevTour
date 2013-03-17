@@ -123,7 +123,7 @@
     NSMutableArray * items = [NSMutableArray array];
     for (UTExhibit *exhibit in [_house.levels[_selectedLevelIndex] exhibits]) {
         [items addObject:[[KNSelectorItem alloc] initWithDisplayValue:exhibit.name
-                                                          selectValue:exhibit.name
+                                                          selectValue:exhibit.hash
                                                                 image:[UIImage imageNamed:exhibit.photoPath]]];
     }
     
@@ -203,7 +203,7 @@
 {
     [self dismissModalViewControllerAnimated:YES];
     
-    UTLevel *level = _house.levels[0];
+    UTLevel *level = _house.levels[_selectedLevelIndex];
 
     UTBlockService *blockService = [[UTBlockService alloc] initWithBlocks:level.map];
     UTPathFinderModel *model = [[UTPathFinderModel alloc] initWithBlockService:blockService];
@@ -211,8 +211,10 @@
     NSMutableArray *exhibits = [NSMutableArray array];
     
     for (UTExhibit *exhibit in level.exhibits) {
-        if ([selectedItems indexOfObject:exhibit.name] != NSNotFound) {
-            [exhibits addObject:exhibit];
+        for (KNSelectorItem *selectedItem in selectedItems) {
+            if ([exhibit.hash isEqualToString:selectedItem.selectValue]) {
+                [exhibits addObject:exhibit];
+            }
         }
     }
     

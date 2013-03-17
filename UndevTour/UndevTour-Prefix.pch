@@ -16,5 +16,5 @@
     #import "NSArray+reverseArray.h"
 #endif
 
-#define IMAGE_SCALE 50.0f
+#define IMAGE_SCALE 25.0f
 #define MAP_SCALE 1.0f
