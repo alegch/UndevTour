@@ -31,156 +31,159 @@
          ],
   "objects": [
               {
-              "icon_path": "checkinIcon-selected.png",
+              "icon_path": "checkinIcon.png",
               "selected_icon_path": "checkinRed.png",
               "name": "Zbsь",
               "description": "Экспонат родился 17 марта 2014 года в 12:00 утра. К сожалению из за пьянства в утробе челюсть свело еще при рождении. ",
               "photo_path": "IMG_0298.JPG",
               "hash":"3",
               "position": {
-              "x": 5,
-              "y": 11,
+              "x": 66,
+              "y": 139
               }
               },
               {
-              "icon_path": "checkinIcon-selected.png",
+              "icon_path": "checkinIcon.png",
               "selected_icon_path": "checkinRed.png",
               "name": "Сливная яма",
               "description": "Яма образовалась буквально за сутки и растет с каждый часом. Эксперты предполагают, что в в здании обитает отряд мексиканцев-беженцев",
               "photo_path": "IMG_0296.JPG",
               "hash":"4",
               "position": {
-              "x": 100,
-              "y": 100,
+              "x": 117,
+              "y": 193
               }
               },
               {
-              "icon_path": "checkinIcon-selected.png",
+              "icon_path": "checkinIcon.png",
               "selected_icon_path": "checkinRed.png",
               "name": "Стол для четвертования",
               "description": "Еще в древности",
               "photo_path": "IMG_0295.JPG",
               "hash":"5",
               "position": {
-              "x": 200,
-              "y": 200,
+              "x": 100,
+              "y": 508
               }
               },
               {
-              "icon_path": "checkinIcon-selected.png",
+              "icon_path": "checkinIcon.png",
               "selected_icon_path": "checkinRed.png",
               "name": "Макс",
               "description": "Редкий зверь, довольно проворен. Руками не трогать. Не кормить.",
               "photo_path": "IMG_0295.JPG",
               "hash":"5",
               "position": {
-              "x": 200,
-              "y": 200,
+              "x": 113,
+              "y": 40
               }
               },
               {
-              "icon_path": "checkinIcon-selected.png",
+              "icon_path": "checkinIcon.png",
               "selected_icon_path": "checkinRed.png",
               "name": "Юра",
               "description": "работает с CMMP плазмоидом",
               "photo_path": "IMG_0280.JPG",
               "hash":"5",
               "position": {
-              "x": 200,
-              "y": 200,
+              "x": 141,
+              "y": 40
               }
               },
               {
-              "icon_path": "checkinIcon-selected.png",
+              "icon_path": "checkinIcon.png",
               "selected_icon_path": "checkinRed.png",
               "name": "Яна",
               "description": "Девочка-программист. Экспонат занесен в красную книгу.",
               "photo_path": "IMG_0281.JPG",
               "hash":"5",
               "position": {
-              "x": 200,
-              "y": 200,
+              "x": 62,
+              "y": 150
               }
               },
               {
-              "icon_path": "checkinIcon-selected.png",
+              "icon_path": "checkinIcon.png",
               "selected_icon_path": "checkinRed.png",
               "name": "Павел",
               "description": "Пишет движок для соревнований",
               "photo_path": "IMG_0284.JPG",
               "hash":"5",
               "position": {
-              "x": 200,
-              "y": 200,
+              "x": 141,
+              "y": 136
               }
               },
               {
-              "icon_path": "checkinIcon-selected.png",
+              "icon_path": "checkinIcon.png",
               "selected_icon_path": "checkinRed.png",
               "name": "Суровые ребята пишущие на vim(Кирилл, Олег, Василий)",
               "description": "Еще в древности",
               "photo_path": "IMG_0295.JPG",
               "hash":"5",
               "position": {
-              "x": 200,
-              "y": 200,
+              "x": 460,
+              "y": 138
               }
               },
               {
-              "icon_path": "checkinIcon-selected.png",
+              "icon_path": "checkinIcon.png",
               "selected_icon_path": "checkinRed.png",
               "name": "Юра",
               "description": "Юра. Просто Юра.",
               "photo_path": "IMG_0286.JPG",
               "hash":"5",
               "position": {
-              "x": 200,
-              "y": 200,
+              "x": 487,
+              "y": 138
+              }
               },
               {
-              "icon_path": "checkinIcon-selected.png",
+              "icon_path": "checkinIcon.png",
               "selected_icon_path": "checkinRed.png",
               "name": "Название чето значит, но чего не понятно.",
               "description": "Глыба",
               "photo_path": "IMG_0287.JPG",
               "hash":"5",
               "position": {
-              "x": 200,
-              "y": 200,
+              "x": 363,
+              "y": 62
+              }
               },
               {
-              "icon_path": "checkinIcon-selected.png",
+              "icon_path": "checkinIcon.png",
               "selected_icon_path": "checkinRed.png",
               "name": "Веселая ферма",
               "description": "JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS JS",
               "photo_path": "IMG_0286.JPG",
               "hash":"5",
               "position": {
-              "x": 200,
-              "y": 200,
+              "x": 461,
+              "y": 263
+              }
               },
               {
-              "icon_path": "checkinIcon-selected.png",
+              "icon_path": "checkinIcon.png",
               "selected_icon_path": "checkinRed.png",
               "name": "Женя. Саня",
               "description": "Женя. Саня.",
               "photo_path": "IMG_0286.JPG",
               "hash":"5",
               "position": {
-              "x": 200,
-              "y": 200,
+              "x": 440,
+              "y": 439
               }
               },
               {
-              "icon_path": "checkinIcon-selected.png",
+              "icon_path": "checkinIcon.png",
               "selected_icon_path": "checkinRed.png",
               "name": "Аааад",
               "description": "Ад",
               "photo_path": "IMG_0286.JPG",
               "hash":"5",
               "position": {
-              "x": 200,
-              "y": 200,
+              "x": 425,
+              "y": 570
               }
               }
               ]
@@ -211,7 +214,7 @@
          ],
   "objects": [
               {
-              "icon_path": "checkinIcon-selected.png",
+              "icon_path": "checkinIcon.png",
               "selected_icon_path": "checkinRed.png",
               "name": "Спич",
               "description": "Описание эскпоната",
@@ -223,7 +226,7 @@
               }
               },
               {
-              "icon_path": "checkinIcon-selected.png",
+              "icon_path": "checkinIcon.png",
               "selected_icon_path": "checkinRed.png",
               "name": "Илья",
               "description": "Описание эскпоната",
@@ -235,7 +238,7 @@
               }
               },
               {
-              "icon_path": "checkinIcon-selected.png",
+              "icon_path": "checkinIcon.png",
               "selected_icon_path": "checkinRed.png",
               "name": "Толя",
               "description": "Описание эскпоната",

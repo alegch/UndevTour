@@ -40,7 +40,8 @@
     imageView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.2];
     imageView.layer.borderWidth = 5.0;
     imageView.layer.borderColor = [[UIColor colorWithWhite:0.0 alpha:0.2] CGColor];
-    imageView.contentMode = UIViewContentModeScaleToFill;
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    imageView.clipsToBounds = YES;
     imageView.image = [UIImage imageNamed:self.exhibit.photoPath];
     [_scrollView addSubview:imageView];
     
